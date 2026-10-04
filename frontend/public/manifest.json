@@ -1,0 +1,24 @@
+{
+  "short_name": "deepy",
+  "name": "deepy - Dive Calculator",
+  "description": "Calculadora de descompresión para buceo profesional - Basada en el U. S. Navy Diving Manual Rev 7",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1e40af",
+  "background_color": "#ffffff",
+  "orientation": "portrait-primary"
+}
