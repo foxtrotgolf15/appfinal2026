@@ -661,6 +661,8 @@ const organizarParadasO2 = (paradas) => {
 
 const calcularBreaksO2 = (paradas) => {
   let contadorO2 = 0; // En segundos acumulados de O2
+  let runO2 = 0; // Segundos de O2 seguidos desde el último break
+  const totalO2 = paradas.filter(p => p.respirando === 'O2').reduce((acc, p) => acc + p.duracion * 60, 0);
   const resultado = [];
   
   let primeraParadaO2 = true;
@@ -702,143 +704,57 @@ const calcularBreaksO2 = (paradas) => {
         primeraParadaO2 = false;
       }
       
-      // Procesar esta parada de O2 con lógica de breaks
-      const duracionTotalMinutos = parada.duracion;
-      const duracionTotalSegundos = duracionTotalMinutos * 60;
-      
-      // EXCEPCIÓN: Calcular si el período total O2 (incluyendo esta parada) sería 30-35 min
-      const tiempoO2ActualMinutos = contadorO2 / 60;
-      const tiempoO2TotalSiNoHayBreak = tiempoO2ActualMinutos + duracionTotalMinutos;
-      
-      console.log(`DEBUG EXCEPCIÓN: O2 actual: ${tiempoO2ActualMinutos}min, Esta parada: ${duracionTotalMinutos}min, Total sin break: ${tiempoO2TotalSiNoHayBreak}min`);
-      
-      // EXCEPCIÓN: Solo si el período total O2 sería >= 30min Y <= 35min
-      if (tiempoO2TotalSiNoHayBreak >= 30 && tiempoO2TotalSiNoHayBreak <= 35) {
-        console.log(`EXCEPCIÓN APLICADA: Período total ${tiempoO2TotalSiNoHayBreak}min está entre 30-35min - No partir la parada`);
-        
-        // Mostrar toda la parada como un bloque continuo
-        let descripcionParada;
-        
-        // Si es parada de 9.1m Y hay paradas profundas: solo "Parada a xm" (sin "Ascenso y")
-        if (parada.profundidad === 9.1 && hayParadasProfundas) {
-          descripcionParada = `Parada a ${parada.profundidad}m`;
-        } else {
-          // Para 6.1m o si no hay paradas profundas: incluir "Ascenso y" excepto si es la primera
-          descripcionParada = i === 0
-            ? `Parada a ${parada.profundidad}m`
-            : `Ascenso y parada a ${parada.profundidad}m`;
+      // Regla del manual (Tabla 9-9, Rev 7): se respira O2 de forma continua mientras el tramo
+      // completo (lo ya respirado + lo que queda por respirar) no pase de 35 min.
+      // Si lo pasa, se respiran 30 min, break de 5 min con aire, y se vuelve a evaluar.
+      // Equivale a: nº de breaks = 0 si O2 total <= 35 min; si no, ceil((total - 35) / 30).
+      const LIMITE_SIN_BREAK = 35 * 60;
+      const TRAMO_O2 = 30 * 60;
+      const tramos = [];
+      {
+        let resto = parada.duracion * 60, run = runO2, consumido = contadorO2;
+        while (resto > 0) {
+          const sinMasBreaks = run + (totalO2 - consumido) <= LIMITE_SIN_BREAK;
+          const t = sinMasBreaks ? resto : Math.min(resto, TRAMO_O2 - run);
+          run += t; consumido += t; resto -= t;
+          const hayBreak = !sinMasBreaks && run === TRAMO_O2 && consumido < totalO2;
+          tramos.push({ segundos: t, hayBreak });
+          if (hayBreak) run = 0;
         }
-        
+      }
+
+      tramos.forEach((tr, k) => {
+        const parteActual = k + 1;
+        const varias = tramos.length > 1;
+        let descripcionParada;
+        if (parada.profundidad === 9.1 && hayParadasProfundas) {
+          descripcionParada = varias ? `Parada a ${parada.profundidad}m (Parte ${parteActual})` : `Parada a ${parada.profundidad}m`;
+        } else if (parteActual === 1) {
+          const base = i === 0 ? `Parada a ${parada.profundidad}m` : `Ascenso y parada a ${parada.profundidad}m`;
+          descripcionParada = varias ? `${base} (Parte ${parteActual})` : base;
+        } else {
+          descripcionParada = `Parada a ${parada.profundidad}m (Parte ${parteActual})`;
+        }
         resultado.push({
           tipo: 'PARADA_O2',
           descripcion: descripcionParada,
-          duracion: duracionTotalMinutos,
-          duracionSegundos: duracionTotalMinutos * 60,
+          duracion: Math.round((tr.segundos / 60) * 100) / 100,
+          duracionSegundos: tr.segundos,
           profundidad: parada.profundidad,
           respirando: 'O2'
         });
-        
-        contadorO2 += duracionTotalMinutos * 60;
-        
-      } else {
-        console.log(`LÓGICA NORMAL: Período total ${tiempoO2TotalSiNoHayBreak}min > 35min - Aplicar breaks cada 30min`);
-        
-        // Calcular número de partes
-        let numPartesTotal = 0;
-        let tiempoSimulado = duracionTotalSegundos;
-        let contadorSimulado = contadorO2;
-        while (tiempoSimulado > 0) {
-          const tiempoHastaBreak = 1800 - (contadorSimulado % 1800);
-          const tiempoEstaParte = Math.min(tiempoHastaBreak, tiempoSimulado);
-          numPartesTotal++;
-          contadorSimulado += tiempoEstaParte;
-          tiempoSimulado -= tiempoEstaParte;
-        }
-        
-        console.log(`Esta parada tendrá ${numPartesTotal} parte(s)`);
-        
-        let tiempoRestanteParada = duracionTotalSegundos;
-        let parteActual = 1;
-        
-        while (tiempoRestanteParada > 0) {
-          const tiempoHastaBreak = 1800 - (contadorO2 % 1800);
-          const tiempoEstaParte = Math.min(tiempoHastaBreak, tiempoRestanteParada);
-          const minutosParte = tiempoEstaParte / 60;
-          
-          // Determinar descripción
-          let descripcionParada;
-          
-          // Si es parada de 9.1m Y hay paradas profundas: solo "Parada a xm" (sin "Ascenso y")
-          if (parada.profundidad === 9.1 && hayParadasProfundas) {
-            descripcionParada = numPartesTotal > 1
-              ? `Parada a ${parada.profundidad}m (Parte ${parteActual})`
-              : `Parada a ${parada.profundidad}m`;
-          } else {
-            // Para 6.1m o si no hay paradas profundas
-            if (parteActual === 1) {
-              if (numPartesTotal > 1) {
-                descripcionParada = i === 0
-                  ? `Parada a ${parada.profundidad}m (Parte ${parteActual})`
-                  : `Ascenso y parada a ${parada.profundidad}m (Parte ${parteActual})`;
-              } else {
-                descripcionParada = i === 0
-                  ? `Parada a ${parada.profundidad}m`
-                  : `Ascenso y parada a ${parada.profundidad}m`;
-              }
-            } else {
-              descripcionParada = `Parada a ${parada.profundidad}m (Parte ${parteActual})`;
-            }
-          }
-          
+        contadorO2 += tr.segundos;
+        runO2 = tr.hayBreak ? 0 : runO2 + tr.segundos;
+        if (tr.hayBreak) {
           resultado.push({
-            tipo: 'PARADA_O2',
-            descripcion: descripcionParada,
-            duracion: Math.round(minutosParte * 100) / 100,
-            duracionSegundos: tiempoEstaParte,
+            tipo: 'BREAK',
+            descripcion: 'Break respirando aire',
+            duracion: 5,
             profundidad: parada.profundidad,
-            respirando: 'O2'
+            respirando: 'aire'
           });
-          
-          contadorO2 += tiempoEstaParte;
-          tiempoRestanteParada -= tiempoEstaParte;
-          
-          console.log(`Parada ${parada.profundidad}m - Parte ${parteActual}: ${minutosParte} min`);
-          
-          // Break cada 30 minutos si queda tiempo restante
-          if (contadorO2 % 1800 === 0 && tiempoRestanteParada > 0) {
-            const tiempoRestanteMinutos = tiempoRestanteParada / 60;
-            
-            // SIEMPRE agregar break cuando completas 30min (si queda algo)
-            console.log(`Break añadido después de 30min - Restante: ${tiempoRestanteMinutos}min`);
-            resultado.push({
-              tipo: 'BREAK',
-              descripcion: 'Break respirando aire',
-              duracion: 5,
-              profundidad: parada.profundidad,
-              respirando: 'aire'
-            });
-            
-            // Si restante ≤35min: agregar como parte final y salir
-            if (tiempoRestanteMinutos <= 35) {
-              console.log(`Restante ≤35min. Agregando parte final de ${tiempoRestanteMinutos}min y saliendo.`);
-              const descripcionUltimaParte = `Parada a ${parada.profundidad}m (Parte ${parteActual + 1})`;
-              resultado.push({
-                tipo: 'PARADA_O2',
-                descripcion: descripcionUltimaParte,
-                duracion: Math.round(tiempoRestanteMinutos * 100) / 100,
-                duracionSegundos: tiempoRestanteParada,
-                profundidad: parada.profundidad,
-                respirando: 'O2'
-              });
-              contadorO2 += tiempoRestanteParada;
-              tiempoRestanteParada = 0; // Salir del bucle
-            }
-            // Si restante >35min: continuar el bucle (se creará otra parte de 30min)
-          }
-          
-          parteActual++;
         }
-      }
+      });
     }
   }
   
