@@ -1,0 +1,13 @@
+[build]
+  base = "frontend"
+  command = "CI=false yarn build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# La app usa rutas (react-router): cualquier ruta debe cargar index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
