@@ -1567,6 +1567,33 @@
   },
   {
     "profundidad":9.1,
+    "descompresión con aire":"No",
+    "descompresión con O2 en el agua":"No",
+    "descompresión en cámara":"No",
+    "Periodos en cámara":null,
+    "tiempo":371,
+    "Grupo de Buceo Sucesivo final":"Z",
+    "parada a 39.6m de profundidad":null,
+    "parada a 36.6m de profundidad":null,
+    "parada a 33.5m de profundidad":null,
+    "parada a 30.5m de profundidad":null,
+    "parada a 27.4m de profundidad":null,
+    "parada a 24.4m de profundidad":null,
+    "parada a 21.3m de profundidad":null,
+    "parada a 18.3m de profundidad":null,
+    "parada a 15.2m de profundidad":null,
+    "parada a 12.2m de profundidad":null,
+    "parada a 9.1m de profundidad":null,
+    "parada a 6.1m de profundidad":null,
+    "Tabla original":"Tabla 9-7",
+    "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
+    "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
+    "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":null
+  },
+  {
+    "profundidad":9.1,
     "descompresión con aire":"Si",
     "descompresión con O2 en el agua":"No",
     "descompresión en cámara":"No",
@@ -4610,7 +4637,7 @@
     "parada a 9.1m de profundidad":null,
     "parada a 6.1m de profundidad":2.0,
     "Tabla original":"Tabla 9-9",
-    "Descompresión con O2 en el agua o descompresion en camara recomendada":"Si",
+    "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
     "Exposición excepcional, la descompresion en camara obligatoria":null,
@@ -4907,7 +4934,7 @@
     "parada a 9.1m de profundidad":null,
     "parada a 6.1m de profundidad":null,
     "Tabla original":"Tabla 9-9",
-    "Descompresión con O2 en el agua o descompresion en camara recomendada":"Si",
+    "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
     "Exposición excepcional, la descompresion en camara obligatoria":null,
@@ -29679,7 +29706,7 @@
     "descompresión en cámara":"No",
     "Periodos en cámara":null,
     "tiempo":35,
-    "Grupo de Buceo Sucesivo final":"N",
+    "Grupo de Buceo Sucesivo final":"O",
     "parada a 39.6m de profundidad":null,
     "parada a 36.6m de profundidad":null,
     "parada a 33.5m de profundidad":null,
@@ -29706,7 +29733,7 @@
     "descompresión en cámara":"No",
     "Periodos en cámara":null,
     "tiempo":40,
-    "Grupo de Buceo Sucesivo final":"O",
+    "Grupo de Buceo Sucesivo final":"Z",
     "parada a 39.6m de profundidad":null,
     "parada a 36.6m de profundidad":null,
     "parada a 33.5m de profundidad":null,
@@ -29841,7 +29868,7 @@
     "descompresión en cámara":"No",
     "Periodos en cámara":null,
     "tiempo":70,
-    "Grupo de Buceo Sucesivo final":"Z",
+    "Grupo de Buceo Sucesivo final":"**",
     "parada a 39.6m de profundidad":null,
     "parada a 36.6m de profundidad":null,
     "parada a 33.5m de profundidad":null,
@@ -30111,7 +30138,7 @@
     "descompresión en cámara":"No",
     "Periodos en cámara":null,
     "tiempo":35,
-    "Grupo de Buceo Sucesivo final":"N",
+    "Grupo de Buceo Sucesivo final":"O",
     "parada a 39.6m de profundidad":null,
     "parada a 36.6m de profundidad":null,
     "parada a 33.5m de profundidad":null,
@@ -30138,7 +30165,7 @@
     "descompresión en cámara":"No",
     "Periodos en cámara":null,
     "tiempo":40,
-    "Grupo de Buceo Sucesivo final":"O",
+    "Grupo de Buceo Sucesivo final":"Z",
     "parada a 39.6m de profundidad":null,
     "parada a 36.6m de profundidad":null,
     "parada a 33.5m de profundidad":null,
@@ -30257,7 +30284,7 @@
     "parada a 18.3m de profundidad":null,
     "parada a 15.2m de profundidad":null,
     "parada a 12.2m de profundidad":12.0,
-    "parada a 9.1m de profundidad":15.0,
+    "parada a 9.1m de profundidad":14.0,
     "parada a 6.1m de profundidad":46.0,
     "Tabla original":"Tabla 9-9",
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
@@ -30273,7 +30300,7 @@
     "descompresión en cámara":"No",
     "Periodos en cámara":null,
     "tiempo":70,
-    "Grupo de Buceo Sucesivo final":"Z",
+    "Grupo de Buceo Sucesivo final":"**",
     "parada a 39.6m de profundidad":null,
     "parada a 36.6m de profundidad":null,
     "parada a 33.5m de profundidad":null,
@@ -30543,7 +30570,7 @@
     "descompresión en cámara":"Si",
     "Periodos en cámara":1.0,
     "tiempo":35,
-    "Grupo de Buceo Sucesivo final":"N",
+    "Grupo de Buceo Sucesivo final":"O",
     "parada a 39.6m de profundidad":null,
     "parada a 36.6m de profundidad":null,
     "parada a 33.5m de profundidad":null,
@@ -30570,7 +30597,7 @@
     "descompresión en cámara":"Si",
     "Periodos en cámara":1.5,
     "tiempo":40,
-    "Grupo de Buceo Sucesivo final":"O",
+    "Grupo de Buceo Sucesivo final":"Z",
     "parada a 39.6m de profundidad":null,
     "parada a 36.6m de profundidad":null,
     "parada a 33.5m de profundidad":null,
@@ -30705,7 +30732,7 @@
     "descompresión en cámara":"Si",
     "Periodos en cámara":3.0,
     "tiempo":70,
-    "Grupo de Buceo Sucesivo final":"Z",
+    "Grupo de Buceo Sucesivo final":"**",
     "parada a 39.6m de profundidad":null,
     "parada a 36.6m de profundidad":null,
     "parada a 33.5m de profundidad":null,
@@ -38147,8 +38174,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38174,8 +38201,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38201,8 +38228,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38228,8 +38255,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38255,8 +38282,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38282,8 +38309,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38309,8 +38336,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38336,8 +38363,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38363,8 +38390,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38390,8 +38417,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38417,8 +38444,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38444,8 +38471,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38471,8 +38498,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38498,8 +38525,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38525,8 +38552,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38552,8 +38579,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38579,8 +38606,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38606,8 +38633,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38633,8 +38660,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38660,8 +38687,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38687,8 +38714,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38714,8 +38741,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38741,8 +38768,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38768,8 +38795,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38795,8 +38822,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38822,8 +38849,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38849,8 +38876,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":61.0,
@@ -38876,8 +38903,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -38903,8 +38930,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -38930,8 +38957,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -38957,8 +38984,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -38984,8 +39011,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39011,8 +39038,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39038,8 +39065,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39065,8 +39092,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39092,8 +39119,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39119,8 +39146,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39146,8 +39173,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39173,8 +39200,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39200,8 +39227,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39227,8 +39254,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39254,8 +39281,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39281,8 +39308,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39308,8 +39335,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39335,8 +39362,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39362,8 +39389,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39389,8 +39416,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39416,8 +39443,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39443,8 +39470,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39470,8 +39497,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39497,8 +39524,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39524,8 +39551,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39551,8 +39578,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39578,8 +39605,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39605,8 +39632,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39632,8 +39659,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39659,8 +39686,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39686,8 +39713,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":64.0,
@@ -39713,8 +39740,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39740,8 +39767,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39767,8 +39794,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39794,8 +39821,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39821,8 +39848,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39848,8 +39875,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39875,8 +39902,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39902,8 +39929,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39929,8 +39956,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39956,8 +39983,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -39983,8 +40010,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40010,8 +40037,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40037,8 +40064,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40064,8 +40091,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40091,8 +40118,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40118,8 +40145,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40145,8 +40172,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40172,8 +40199,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40199,8 +40226,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40226,8 +40253,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40253,8 +40280,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40280,8 +40307,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40307,8 +40334,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40334,8 +40361,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40361,8 +40388,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":67.1,
@@ -40388,8 +40415,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40415,8 +40442,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40442,8 +40469,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40469,8 +40496,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40496,8 +40523,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40523,8 +40550,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40550,8 +40577,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40577,8 +40604,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40604,8 +40631,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40631,8 +40658,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40658,8 +40685,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40685,8 +40712,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40712,8 +40739,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40739,8 +40766,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40766,8 +40793,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40793,8 +40820,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40820,8 +40847,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40847,8 +40874,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40874,8 +40901,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40901,8 +40928,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40928,8 +40955,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40955,8 +40982,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -40982,8 +41009,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -41009,8 +41036,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":76.2,
@@ -41036,8 +41063,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41063,8 +41090,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41090,8 +41117,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41117,8 +41144,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41144,8 +41171,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41171,8 +41198,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41198,8 +41225,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41225,8 +41252,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41252,8 +41279,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41279,8 +41306,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41306,8 +41333,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41333,8 +41360,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41360,8 +41387,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41387,8 +41414,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41414,8 +41441,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41441,8 +41468,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41468,8 +41495,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41495,8 +41522,8 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   },
   {
     "profundidad":91.4,
@@ -41522,7 +41549,7 @@
     "Descompresión con O2 en el agua o descompresion en camara recomendada":null,
     "Usar excepcionalmente la descompresion con aire, la descompresión con O2 en el agua o descompresion en camara es obligatoria":null,
     "Usar excepcionalmente descompresión con O2 en el agua, la descompresion en camara es obligatoria":null,
-    "Exposición excepcional, la descompresion en camara obligatoria":"Si",
-    "Exposición excepcional":null
+    "Exposición excepcional, la descompresion en camara obligatoria":null,
+    "Exposición excepcional":"Si"
   }
 ]
