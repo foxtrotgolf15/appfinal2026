@@ -797,15 +797,20 @@ const calcularTiemposAscensoO2 = (resultado, profundidadMaximaCorregida) => {
   );
 
   // Calcular tiempo total incluyendo breaks y ventilación
+  // La ventilación de 3 min NO cuenta en el total de ascenso con O2 (criterio del manual)
   const tiempoTotalParadasYBreaks = paradasO2.reduce((sum, elemento) => {
+    if (elemento.tipo === 'VENTILACION') return sum;
     return sum + (elemento.duracion * 60); // Convertir a segundos
   }, 0);
 
-  // Tiempo entre paradas
+  // Los tiempos de parada de la Tabla 9-9 ya incluyen el ascenso entre paradas (salvo hasta la primera),
+  // igual que en la ruta de aire; sumarlo otra vez duplicaba ~20 s por tramo.
+  // Única excepción (manual): el viaje hasta la primera parada de O2 sí se suma cuando vienen paradas de aire antes.
   let tiempoEntreParadas = 0;
-  for (let i = 0; i < paradas.length - 1; i++) {
-    const distancia = paradas[i].profundidad - paradas[i + 1].profundidad;
-    tiempoEntreParadas += (distancia / velocidadAscenso) * 60;
+  const iPrimeraO2 = paradas.findIndex(p => p.profundidad <= 9.1);
+  if (iPrimeraO2 > 0) {
+    const distancia = paradas[iPrimeraO2 - 1].profundidad - paradas[iPrimeraO2].profundidad;
+    tiempoEntreParadas = (distancia / velocidadAscenso) * 60;
   }
 
   const tiempoDescompresionTotalSegundos = tiempoHastaPrimeraParadaSegundos + 
@@ -910,10 +915,11 @@ const calcularProfundidadEquivalente = (profundidadCorregida, altitud) => {
   // Profundidad Equivalente = Profundidad Corregida × (1/Palt)
   const profundidadEquivalente = profundidadCorregida * (1 / palt);
   
-  // Redondear Palt a 5 decimales y Profundidad Equivalente a 2 decimales
+  // Palt a 5 decimales; Profundidad Equivalente a 2 decimales (redondeada hacia arriba)
   return {
     palt: Math.round(palt * 100000) / 100000,
-    profundidadEquivalente: Math.round(profundidadEquivalente * 100) / 100
+    // Siempre hacia ARRIBA (valor más restrictivo); el 1e-6 evita que el ruido de coma flotante suba un escalón de más
+    profundidadEquivalente: Math.ceil(profundidadEquivalente * 100 - 1e-6) / 100
   };
 };
 
