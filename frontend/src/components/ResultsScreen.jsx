@@ -601,6 +601,14 @@ const ResultsScreen = () => {
                       <p className="text-sm text-slate-600 mb-4">
                         Tiempos mínimos (hh:mm) que deben transcurrir en superficie para poder ascender a cada altitud:
                       </p>
+                      {Number(resultados.altitud) >= 2438.4 && (
+                        <div className="bg-green-50 p-3 rounded-lg border border-green-300 mb-4">
+                          <p className="text-sm text-green-800">
+                            Sitio de buceo a 2438 m (8000 ft) o más: no se requiere intervalo en superficie antes de un vuelo comercial,
+                            ya que volar supone un aumento de la presión atmosférica y no una disminución.
+                          </p>
+                        </div>
+                      )}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                         {resultados.tiemposAltitud && resultados.tiemposAltitud.map((item, index) => (
                           <div key={index} className="bg-slate-50 p-3 rounded border border-slate-200">
