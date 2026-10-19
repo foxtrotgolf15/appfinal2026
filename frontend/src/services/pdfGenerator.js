@@ -391,7 +391,6 @@ export const generateDiverLogPDF = async (cuestionarioData, resultados, formData
     reemplazarEnAmbasPaginas('Tenders / asistentes', cuestionarioData.c7);
     reemplazarEnAmbasPaginas('Casco / mascarón utilizado', cuestionarioData.c11);
     reemplazarEnAmbasPaginas('Finalidad de la inmersión', cuestionarioData.c8);
-    reemplazarEnAmbasPaginas('Exposición', resultados.exposicion || 'Normal');
     reemplazarEnAmbasPaginas('Tipo de profundímetro', tipoProfundimetro);
     reemplazarEnAmbasPaginas('Lectura de profundidad', `${formData.p2}m`);
     reemplazarEnAmbasPaginas('Hora que abandona superficie', cuestionarioData.c9);
