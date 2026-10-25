@@ -424,7 +424,7 @@ const RealtimeFormScreen = () => {
                   {/* P2.1 */}
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-1">
-                      <Label className="text-xs font-normal text-slate-500">Tipo de profundímetro</Label>
+                      <Label className="text-xs font-normal text-slate-500 whitespace-nowrap">Tipo de profundímetro</Label>
                       <TooltipProvider>
                         <Tooltip delayDuration={0}>
                           <TooltipTrigger asChild>
@@ -433,18 +433,18 @@ const RealtimeFormScreen = () => {
                             </button>
                           </TooltipTrigger>
                           <TooltipContent className="max-w-xs bg-slate-900 text-white p-3 text-sm">
-                            <p>En caso de seleccionar la opción Neumático se aplicará una corrección automáticamente que compense el peso del aire en la manguera</p>
+                            <p>En caso de seleccionar la opción Profundímetro neumático se aplicará una corrección automáticamente que compense el peso del aire en la manguera</p>
                           </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
                     </div>
                     <Select value={p2_1} onValueChange={setP2_1}>
-                      <SelectTrigger className="h-8 w-36 text-xs text-slate-600 transition-all duration-200 focus:ring-2 focus:ring-green-500">
+                      <SelectTrigger className="h-8 w-44 text-xs text-slate-600 transition-all duration-200 focus:ring-2 focus:ring-green-500">
                         <SelectValue placeholder="Seleccione" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="ordenador">Digital</SelectItem>
-                        <SelectItem value="neumatico">Neumático</SelectItem>
+                        <SelectItem value="ordenador">Profundímetro digital</SelectItem>
+                        <SelectItem value="neumatico">Profundímetro neumático</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

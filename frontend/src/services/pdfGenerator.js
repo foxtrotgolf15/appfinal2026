@@ -52,7 +52,7 @@ const generarID = (fecha, proyecto, horaLlegada) => {
 // Obtener el nombre del modo de profundímetro
 const getTipoProfundimetro = (p2_1) => {
   if (p2_1 === 'neumatico') return 'Profundímetro neumático';
-  if (p2_1 === 'ordenador') return 'Ordenador / profundímetro del buzo';
+  if (p2_1 === 'ordenador') return 'Profundímetro digital';
   return '';
 };
 
