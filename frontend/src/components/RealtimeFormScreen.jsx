@@ -7,7 +7,7 @@ import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { Info, AlertCircle, Play, ArrowUpFromLine } from 'lucide-react';
+import { Info, AlertCircle, ArrowDownToLine, ArrowUpFromLine } from 'lucide-react';
 import { Alert, AlertDescription } from './ui/alert';
 import LegalFooter from './LegalFooter';
 import ScrollTimePicker from './ScrollTimePicker';
@@ -295,8 +295,6 @@ const RealtimeFormScreen = () => {
     navigate('/warning', { state: { formData: formDataToSend } });
   };
 
-  // Determinar si mostrar P2.1
-  const showP2_1 = p2 !== '' && parseFloat(p2) > 0 && parseFloat(p2) <= 91.4;
 
   // Determinar si mostrar P4.1
   const showP4_1 = p2_1 === 'ordenador' && p4 !== '' && parseFloat(p4) >= 91.44;
@@ -335,10 +333,10 @@ const RealtimeFormScreen = () => {
                   {!isRunning && (
                     <Button
                       onClick={startStopwatch}
-                      className="bg-green-600 hover:bg-green-700 text-white px-2.5 text-sm md:text-base md:h-10 md:tall:h-12 md:px-3 md:tall:px-8 md:tall:min-w-[140px]"
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-3 text-sm md:text-base md:h-10 md:tall:h-12 md:px-4 md:tall:px-8 md:tall:min-w-[140px]"
                     >
-                      <Play className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-                      Iniciar
+                      <ArrowDownToLine className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2" />
+                      Abandonar superficie
                     </Button>
                   )}
                   {isRunning && (
@@ -354,7 +352,7 @@ const RealtimeFormScreen = () => {
               </div>
               {!isRunning && elapsedTime === 0 && (
                 <p className="hidden md:tall:block text-sm text-slate-600 italic text-center mt-4">
-                  Presiona "Iniciar" para comenzar a registrar el tiempo de inmersión
+                  Presiona "Abandonar superficie" para comenzar a registrar el tiempo de inmersión
                 </p>
               )}
             </CardContent>
@@ -366,8 +364,7 @@ const RealtimeFormScreen = () => {
         </aside>
         <main className="px-2 py-4 md:p-0 md:overflow-y-auto">
       <div className="max-w-4xl mx-auto mb-20">
-        <Card className="shadow-xl border-2 border-slate-200">
-          <CardContent className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
+        <div className="space-y-4">
             {/* Botón Calcular inmersión - Visible cuando cronómetro está detenido */}
             {!isRunning && elapsedTime > 0 && (
               <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200">
@@ -404,53 +401,59 @@ const RealtimeFormScreen = () => {
               </Alert>
             )}
 
-            <form className="space-y-6">
-              {/* P2 */}
-              <div className="space-y-2">
-                <Label htmlFor="p2">
-                  Profundidad máxima (metros) <span className="text-red-600">*</span>
-                </Label>
-                <Input
-                  id="p2"
-                  type="number"
-                  step="0.01"
-                  value={p2}
-                  onChange={(e) => setP2(e.target.value)}
-                  placeholder="Ej: 30.5"
-                  className="transition-all duration-200 focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-
-              {/* P2.1 */}
-              {showP2_1 && (
-                <div className="space-y-2 pl-4 border-l-4 border-green-300 bg-green-50 p-4 rounded">
-                  <div className="flex items-center space-x-2">
-                    <Label>Instrumento de medición de profundidad</Label>
-                    <TooltipProvider>
-                      <Tooltip delayDuration={0}>
-                        <TooltipTrigger asChild>
-                          <button type="button" className="inline-flex items-center p-1 touch-manipulation">
-                            <Info className="w-6 h-6 sm:w-5 sm:h-5 text-green-600 cursor-help hover:text-green-800 transition-colors" />
-                          </button>
-                        </TooltipTrigger>
-                        <TooltipContent className="max-w-xs bg-slate-900 text-white p-3 text-sm">
-                          <p>En caso de seleccionar la opción Profundímetro neumático se aplicará una corrección automáticamente que compense el peso del aire en la manguera</p>
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
+            <form className="space-y-4">
+              {/* Viñeta: profundidad máxima (+ tipo de profundímetro, de menor importancia) */}
+              <Card className="shadow-md border-2 border-slate-200">
+                <CardContent className="p-4 space-y-3">
+                  {/* P2 */}
+                  <div className="space-y-2">
+                    <Label htmlFor="p2">
+                      Profundidad máxima (metros) <span className="text-red-600">*</span>
+                    </Label>
+                    <Input
+                      id="p2"
+                      type="number"
+                      step="0.01"
+                      value={p2}
+                      onChange={(e) => setP2(e.target.value)}
+                      placeholder="Ej: 30.5"
+                      className="transition-all duration-200 focus:ring-2 focus:ring-green-500"
+                    />
                   </div>
-                  <Select value={p2_1} onValueChange={setP2_1}>
-                    <SelectTrigger className="transition-all duration-200 focus:ring-2 focus:ring-green-500">
-                      <SelectValue placeholder="Seleccione una opción" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="neumatico">Profundímetro neumático</SelectItem>
-                      <SelectItem value="ordenador">Ordenador / profundímetro del buzo</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              )}
 
+                  {/* P2.1 */}
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center gap-1">
+                      <Label className="text-xs font-normal text-slate-500">Tipo de profundímetro</Label>
+                      <TooltipProvider>
+                        <Tooltip delayDuration={0}>
+                          <TooltipTrigger asChild>
+                            <button type="button" className="inline-flex items-center p-1 touch-manipulation">
+                              <Info className="w-4 h-4 text-slate-400 cursor-help hover:text-slate-600 transition-colors" />
+                            </button>
+                          </TooltipTrigger>
+                          <TooltipContent className="max-w-xs bg-slate-900 text-white p-3 text-sm">
+                            <p>En caso de seleccionar la opción Neumático se aplicará una corrección automáticamente que compense el peso del aire en la manguera</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </div>
+                    <Select value={p2_1} onValueChange={setP2_1}>
+                      <SelectTrigger className="h-8 w-36 text-xs text-slate-600 transition-all duration-200 focus:ring-2 focus:ring-green-500">
+                        <SelectValue placeholder="Seleccione" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="ordenador">Digital</SelectItem>
+                        <SelectItem value="neumatico">Neumático</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Viñeta: tipo de descompresión, altitud y resto de preguntas */}
+              <Card className="shadow-md border-2 border-slate-200">
+                <CardContent className="p-4 space-y-6">
               {/* P1 */}
               <div className="space-y-2">
                 <Label htmlFor="p1">
@@ -641,9 +644,10 @@ const RealtimeFormScreen = () => {
                   Presiona "Abandonar fondo" en el cronómetro para calcular la descompresión
                 </p>
               </div>
+                </CardContent>
+              </Card>
             </form>
-          </CardContent>
-        </Card>
+        </div>
         <LegalFooter />
       </div>
         </main>
