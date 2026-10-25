@@ -609,8 +609,16 @@ const ResultsScreen = () => {
                           </p>
                         </div>
                       )}
+                      {/* Solo se muestran las altitudes que exigen esperar (las de 0:00 se ocultan) */}
+                      {(resultados.tiemposAltitud || []).filter((item) => !/^0+:0+(:0+)?$/.test(String(item.valor || '').trim())).length === 0 && (
+                        <p className="text-sm text-slate-700 bg-slate-50 p-3 rounded border border-slate-200">
+                          No es necesario esperar para ascender a ninguna de estas altitudes.
+                        </p>
+                      )}
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-                        {resultados.tiemposAltitud && resultados.tiemposAltitud.map((item, index) => (
+                        {resultados.tiemposAltitud && resultados.tiemposAltitud
+                          .filter((item) => !/^0+:0+(:0+)?$/.test(String(item.valor || '').trim()))
+                          .map((item, index) => (
                           <div key={index} className="bg-slate-50 p-3 rounded border border-slate-200">
                             <div className="flex justify-between items-center">
                               <span className="font-medium text-slate-700">{item.altitud}:</span>
