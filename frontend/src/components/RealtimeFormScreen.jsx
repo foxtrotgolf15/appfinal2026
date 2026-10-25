@@ -344,7 +344,7 @@ const RealtimeFormScreen = () => {
                   {isRunning && (
                     <Button
                       onClick={stopAndCalculate}
-                      className="bg-red-600 hover:bg-red-700 text-white px-3 text-sm md:text-base md:h-10 md:tall:h-12 md:px-4 md:tall:px-8 md:tall:min-w-[140px]"
+                      className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold px-3 text-sm md:text-base md:h-10 md:tall:h-12 md:px-4 md:tall:px-8 md:tall:min-w-[140px]"
                     >
                       <ArrowUpFromLine className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2" />
                       Abandonar fondo
