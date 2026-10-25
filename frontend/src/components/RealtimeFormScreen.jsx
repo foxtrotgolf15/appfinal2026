@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
@@ -321,9 +321,9 @@ const RealtimeFormScreen = () => {
     <div className="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen md:h-screen md:overflow-hidden">
       <div className="md:grid md:grid-cols-2 md:gap-4 md:h-full md:p-4 max-w-7xl mx-auto">
         {/* Cronómetro + datos en vivo: fijo arriba en vertical, mitad izquierda en pantallas anchas */}
-        <aside className="sticky top-0 z-30 bg-slate-50 px-2 pt-2 pb-2 border-b border-slate-200 shadow-sm md:static md:z-auto md:bg-transparent md:p-0 md:border-0 md:shadow-none md:overflow-y-auto">
+        <aside className="sticky top-0 z-30 bg-slate-50 px-2 pt-2 pb-2 border-b border-slate-200 shadow-sm md:static md:z-auto md:bg-transparent md:p-0 md:pb-16 md:border-0 md:shadow-none md:overflow-y-auto">
           <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200">
-            <CardContent className="p-2 md:p-3 md:tall:p-8">
+            <CardContent className="p-2 md:p-2 md:tall:p-8">
               <div className="flex items-center justify-between gap-2 md:tall:block md:tall:text-center md:tall:space-y-4">
                 <div>
                   <h3 className="hidden md:tall:block text-xl font-semibold text-slate-700">Tiempo de Inmersión</h3>
@@ -359,16 +359,14 @@ const RealtimeFormScreen = () => {
               )}
             </CardContent>
           </Card>
+          <h1 className="mt-2 md:tall:mt-4 rounded-md bg-gradient-to-r from-green-600 to-green-700 py-1 md:tall:py-3 text-center text-sm md:tall:text-2xl font-bold text-white">
+            Cálculo en Tiempo Real
+          </h1>
           <PanelTiempoReal panel={panel} elapsedTime={elapsedTime} />
         </aside>
         <main className="px-2 py-4 md:p-0 md:overflow-y-auto">
       <div className="max-w-4xl mx-auto mb-20">
         <Card className="shadow-xl border-2 border-slate-200">
-          <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-t-lg p-4 sm:p-6">
-            <CardTitle className="text-xl sm:text-2xl font-bold text-center">
-              Cálculo en Tiempo Real
-            </CardTitle>
-          </CardHeader>
           <CardContent className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
             {/* Botón Calcular inmersión - Visible cuando cronómetro está detenido */}
             {!isRunning && elapsedTime > 0 && (
