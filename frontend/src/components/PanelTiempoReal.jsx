@@ -51,8 +51,8 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
           />
           <Dato
             clase="col-span-2"
-            etiqueta={`Descompresión total (mm:ss) · con ${panel.modo === 'o2' ? 'O2' : 'aire'}${panel.asumido ? ' (sin elegir tipo)' : ''}`}
-            valor={panel.descompresionTotal}
+            etiqueta={`Descompresión sin contar ascenso (mm:ss) · con ${panel.modo === 'o2' ? 'O2' : 'aire'}`}
+            valor={panel.segundosDescompresion > 0 ? formatMMSS(panel.segundosDescompresion) : 'Sin paradas'}
           />
         </div>
       </CardContent>

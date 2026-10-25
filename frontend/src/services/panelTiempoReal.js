@@ -55,6 +55,16 @@ export const calcularPanelTiempoReal = (campos, minutos) => {
     return { estado: 'error', mensaje: (r && r.error) || 'No se puede calcular con los datos actuales' };
   }
 
+  // Tiempo de descompresión SIN contar el ascenso: suma de paradas (y breaks de aire en O2).
+  // Los 3 min de ventilación del cambio a O2 no cuentan. Los tiempos de parada de la tabla ya incluyen
+  // el ascenso entre paradas, igual que en el manual.
+  const elementos = Array.isArray(r.paradasConBreaks) && r.paradasConBreaks.length > 0
+    ? r.paradasConBreaks.filter((e) => e.tipo !== 'VENTILACION')
+    : (r.paradas || []);
+  const segundosDescompresion = Math.round(
+    elementos.reduce((suma, e) => suma + (Number(e.duracion) || 0), 0) * 60
+  );
+
   return {
     estado: 'ok',
     modo,
@@ -62,6 +72,6 @@ export const calcularPanelTiempoReal = (campos, minutos) => {
     profundidadTabulada: r.profundidadTabulada,
     tiempoTabulado: r.tiempoTabulado,
     siguienteTiempo: siguienteTiempoTabla(r.profundidadTabulada, r.tiempoTabulado),
-    descompresionTotal: r.tiempoDescompresionTotal
+    segundosDescompresion
   };
 };
