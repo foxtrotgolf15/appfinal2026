@@ -405,23 +405,6 @@ const RealtimeFormScreen = () => {
             )}
 
             <form className="space-y-6">
-              {/* P1 */}
-              <div className="space-y-2">
-                <Label htmlFor="p1">
-                  Tipo de descompresión preferida (En el caso que fuera necesario) <span className="text-red-600">*</span>
-                </Label>
-                <Select value={p1} onValueChange={setP1}>
-                  <SelectTrigger className="transition-all duration-200 focus:ring-2 focus:ring-green-500">
-                    <SelectValue placeholder="Seleccione una opción" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="aire">Descompresión con aire</SelectItem>
-                    <SelectItem value="o2">Descompresión con O2 en el agua</SelectItem>
-                    <SelectItem value="camara" disabled>Descompresión en cámara</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
               {/* P2 */}
               <div className="space-y-2">
                 <Label htmlFor="p2">
@@ -467,6 +450,23 @@ const RealtimeFormScreen = () => {
                   </Select>
                 </div>
               )}
+
+              {/* P1 */}
+              <div className="space-y-2">
+                <Label htmlFor="p1">
+                  Tipo de descompresión preferida <span className="text-red-600">*</span>
+                </Label>
+                <Select value={p1} onValueChange={setP1}>
+                  <SelectTrigger className="transition-all duration-200 focus:ring-2 focus:ring-green-500">
+                    <SelectValue placeholder="Seleccione una opción" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="aire">Descompresión con aire</SelectItem>
+                    <SelectItem value="o2">Descompresión con O2 en el agua</SelectItem>
+                    <SelectItem value="camara" disabled>Descompresión en cámara</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
               {/* P4 */}
               <div className="space-y-2">
