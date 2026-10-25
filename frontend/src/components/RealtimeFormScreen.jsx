@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -11,6 +11,8 @@ import { Info, AlertCircle, Play, Pause, StopCircle } from 'lucide-react';
 import { Alert, AlertDescription } from './ui/alert';
 import LegalFooter from './LegalFooter';
 import ScrollTimePicker from './ScrollTimePicker';
+import PanelTiempoReal from './PanelTiempoReal';
+import { calcularPanelTiempoReal } from '../services/panelTiempoReal';
 
 const RealtimeFormScreen = () => {
   const navigate = useNavigate();
@@ -330,8 +332,77 @@ const RealtimeFormScreen = () => {
   // Determinar si mostrar P6.1, P6.2, P6.3
   const showP6Subcampos = p6 === 'si' && p5 === 'no';
 
+  // Datos en vivo: solo se recalculan al cambiar los campos o al pasar al siguiente minuto de tabla
+  const minutoTabulacion = Math.max(1, Math.ceil(elapsedTime / 60));
+  const panel = useMemo(
+    () => calcularPanelTiempoReal({ p1, p2, p2_1, p4, p4_1, p4_2, p4_2_1, p4_2_2 }, minutoTabulacion),
+    [p1, p2, p2_1, p4, p4_1, p4_2, p4_2_1, p4_2_2, minutoTabulacion]
+  );
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-4 sm:py-8 px-2 sm:px-4">
+    <div className="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen md:h-screen md:overflow-hidden">
+      <div className="md:grid md:grid-cols-2 md:gap-4 md:h-full md:p-4 max-w-7xl mx-auto">
+        {/* Cronómetro + datos en vivo: fijo arriba en vertical, mitad izquierda en pantallas anchas */}
+        <aside className="sticky top-0 z-30 bg-slate-50 px-2 pt-2 pb-2 border-b border-slate-200 shadow-sm md:static md:z-auto md:bg-transparent md:p-0 md:border-0 md:shadow-none md:overflow-y-auto">
+          <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200">
+            <CardContent className="p-2 md:p-3 md:tall:p-8">
+              <div className="flex items-center justify-between gap-2 md:tall:block md:tall:text-center md:tall:space-y-4">
+                <div>
+                  <h3 className="hidden md:tall:block text-xl font-semibold text-slate-700">Tiempo de Inmersión</h3>
+                  <div className="text-2xl min-[400px]:text-3xl md:text-2xl md:tall:text-7xl font-mono font-bold text-green-700">
+                    {formatTime(elapsedTime)}
+                  </div>
+                </div>
+                <div className="flex gap-1.5 md:gap-2 md:tall:flex-wrap md:tall:justify-center md:tall:gap-4 md:tall:pt-4">
+                  {!isRunning && (
+                    <Button
+                      onClick={startStopwatch}
+                      className="bg-green-600 hover:bg-green-700 text-white px-2.5 text-sm md:text-base md:h-10 md:tall:h-12 md:px-3 md:tall:px-8 md:tall:min-w-[140px]"
+                    >
+                      <Play className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                      Iniciar
+                    </Button>
+                  )}
+                  {isRunning && (
+                    <>
+                      <Button
+                        onClick={pauseStopwatch}
+                        variant="outline"
+                        className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-2.5 text-sm md:text-base md:h-10 md:tall:h-12 md:px-3 md:tall:px-8 md:tall:min-w-[140px]"
+                      >
+                        {isPaused ? (
+                          <>
+                            <Play className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                            Reanudar
+                          </>
+                        ) : (
+                          <>
+                            <Pause className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                            Pausar
+                          </>
+                        )}
+                      </Button>
+                      <Button
+                        onClick={stopAndCalculate}
+                        className="bg-red-600 hover:bg-red-700 text-white px-2.5 text-sm md:text-base md:h-10 md:tall:h-12 md:px-3 md:tall:px-8 md:tall:min-w-[140px]"
+                      >
+                        <StopCircle className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
+                        Finalizar
+                      </Button>
+                    </>
+                  )}
+                </div>
+              </div>
+              {!isRunning && elapsedTime === 0 && (
+                <p className="hidden md:tall:block text-sm text-slate-600 italic text-center mt-4">
+                  Presiona "Iniciar" para comenzar a registrar el tiempo de inmersión
+                </p>
+              )}
+            </CardContent>
+          </Card>
+          <PanelTiempoReal panel={panel} elapsedTime={elapsedTime} />
+        </aside>
+        <main className="px-2 py-4 md:p-0 md:overflow-y-auto">
       <div className="max-w-4xl mx-auto mb-20">
         <Card className="shadow-xl border-2 border-slate-200">
           <CardHeader className="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-t-lg p-4 sm:p-6">
@@ -340,65 +411,6 @@ const RealtimeFormScreen = () => {
             </CardTitle>
           </CardHeader>
           <CardContent className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
-            {/* Cronómetro */}
-            <Card className="bg-gradient-to-br from-green-50 to-blue-50 border-2 border-green-200">
-              <CardContent className="p-6 sm:p-8">
-                <div className="text-center space-y-4">
-                  <h3 className="text-lg sm:text-xl font-semibold text-slate-700">Tiempo de Inmersión</h3>
-                  <div className="text-5xl sm:text-6xl md:text-7xl font-mono font-bold text-green-700">
-                    {formatTime(elapsedTime)}
-                  </div>
-                  <div className="flex flex-wrap justify-center gap-3 sm:gap-4 pt-4">
-                    {!isRunning && (
-                      <Button 
-                        onClick={startStopwatch}
-                        size="lg"
-                        className="bg-green-600 hover:bg-green-700 text-white min-w-[140px]"
-                      >
-                        <Play className="w-5 h-5 mr-2" />
-                        Iniciar
-                      </Button>
-                    )}
-                    {isRunning && (
-                      <>
-                        <Button 
-                          onClick={pauseStopwatch}
-                          size="lg"
-                          variant="outline"
-                          className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 min-w-[140px]"
-                        >
-                          {isPaused ? (
-                            <>
-                              <Play className="w-5 h-5 mr-2" />
-                              Reanudar
-                            </>
-                          ) : (
-                            <>
-                              <Pause className="w-5 h-5 mr-2" />
-                              Pausar
-                            </>
-                          )}
-                        </Button>
-                        <Button 
-                          onClick={stopAndCalculate}
-                          size="lg"
-                          className="bg-red-600 hover:bg-red-700 text-white min-w-[140px]"
-                        >
-                          <StopCircle className="w-5 h-5 mr-2" />
-                          Finalizar
-                        </Button>
-                      </>
-                    )}
-                  </div>
-                  {!isRunning && elapsedTime === 0 && (
-                    <p className="text-sm text-slate-600 italic">
-                      Presiona "Iniciar" para comenzar a registrar el tiempo de inmersión
-                    </p>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
-
             {/* Botón Calcular inmersión - Visible cuando cronómetro está detenido */}
             {!isRunning && elapsedTime > 0 && (
               <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-2 border-blue-200">
@@ -676,6 +688,8 @@ const RealtimeFormScreen = () => {
           </CardContent>
         </Card>
         <LegalFooter />
+      </div>
+        </main>
       </div>
     </div>
   );
