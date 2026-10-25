@@ -7,7 +7,7 @@ import { Label } from './ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
-import { Info, AlertCircle, Play, Pause, StopCircle } from 'lucide-react';
+import { Info, AlertCircle, Play, ArrowUpFromLine } from 'lucide-react';
 import { Alert, AlertDescription } from './ui/alert';
 import LegalFooter from './LegalFooter';
 import ScrollTimePicker from './ScrollTimePicker';
@@ -25,8 +25,6 @@ const RealtimeFormScreen = () => {
   const [elapsedTime, setElapsedTime] = useState(0); // en segundos
   const startTimeRef = useRef(null);
   const intervalRef = useRef(null);
-  const [isPaused, setIsPaused] = useState(false);
-  const pausedTimeRef = useRef(0);
   
   // Estado para todas las respuestas (restaurar si vienen de error)
   const [p1, setP1] = useState(savedFormData?.p1 || 'aire');
@@ -78,26 +76,7 @@ const RealtimeFormScreen = () => {
   const startStopwatch = () => {
     if (!isRunning) {
       setIsRunning(true);
-      setIsPaused(false);
-      const now = Date.now();
-      startTimeRef.current = now - (pausedTimeRef.current * 1000);
-      
-      intervalRef.current = setInterval(() => {
-        const elapsed = Math.floor((Date.now() - startTimeRef.current) / 1000);
-        setElapsedTime(elapsed);
-      }, 1000);
-    }
-  };
-
-  const pauseStopwatch = () => {
-    if (isRunning && !isPaused) {
-      setIsPaused(true);
-      pausedTimeRef.current = elapsedTime;
-      clearInterval(intervalRef.current);
-    } else if (isPaused) {
-      setIsPaused(false);
-      const now = Date.now();
-      startTimeRef.current = now - (pausedTimeRef.current * 1000);
+      startTimeRef.current = Date.now();
       
       intervalRef.current = setInterval(() => {
         const elapsed = Math.floor((Date.now() - startTimeRef.current) / 1000);
@@ -109,7 +88,6 @@ const RealtimeFormScreen = () => {
   const stopAndCalculate = () => {
     if (isRunning) {
       setIsRunning(false);
-      setIsPaused(false);
       clearInterval(intervalRef.current);
       
       // Validar y calcular con el tiempo del cronómetro como P3
@@ -364,32 +342,13 @@ const RealtimeFormScreen = () => {
                     </Button>
                   )}
                   {isRunning && (
-                    <>
-                      <Button
-                        onClick={pauseStopwatch}
-                        variant="outline"
-                        className="border-2 border-blue-600 text-blue-600 hover:bg-blue-50 px-2.5 text-sm md:text-base md:h-10 md:tall:h-12 md:px-3 md:tall:px-8 md:tall:min-w-[140px]"
-                      >
-                        {isPaused ? (
-                          <>
-                            <Play className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-                            Reanudar
-                          </>
-                        ) : (
-                          <>
-                            <Pause className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-                            Pausar
-                          </>
-                        )}
-                      </Button>
-                      <Button
-                        onClick={stopAndCalculate}
-                        className="bg-red-600 hover:bg-red-700 text-white px-2.5 text-sm md:text-base md:h-10 md:tall:h-12 md:px-3 md:tall:px-8 md:tall:min-w-[140px]"
-                      >
-                        <StopCircle className="w-4 h-4 md:w-5 md:h-5 mr-1 md:mr-2" />
-                        Finalizar
-                      </Button>
-                    </>
+                    <Button
+                      onClick={stopAndCalculate}
+                      className="bg-red-600 hover:bg-red-700 text-white px-3 text-sm md:text-base md:h-10 md:tall:h-12 md:px-4 md:tall:px-8 md:tall:min-w-[140px]"
+                    >
+                      <ArrowUpFromLine className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2" />
+                      Abandonar fondo
+                    </Button>
                   )}
                 </div>
               </div>
@@ -681,7 +640,7 @@ const RealtimeFormScreen = () => {
 
               <div className="pt-4 text-center">
                 <p className="text-sm text-slate-600 mb-4">
-                  Presiona "Finalizar" en el cronómetro para calcular la descompresión
+                  Presiona "Abandonar fondo" en el cronómetro para calcular la descompresión
                 </p>
               </div>
             </form>
