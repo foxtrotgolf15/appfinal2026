@@ -15,7 +15,7 @@ const Dato = ({ etiqueta, valor, clase = '', valorClase = 'text-slate-900' }) =>
 
 const MENSAJES = {
   sin_profundidad: 'Introduce la profundidad máxima para ver los datos de tabulación',
-  falta_instrumento: 'Selecciona el instrumento de medición de profundidad'
+  falta_instrumento: 'Selecciona el tipo de profundímetro'
 };
 
 const PanelTiempoReal = ({ panel, elapsedTime }) => {
@@ -45,7 +45,7 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
             valor={panel.siguienteTiempo !== null ? `${panel.siguienteTiempo} min` : '—'}
           />
           <Dato
-            etiqueta="Faltan para el siguiente"
+            etiqueta="Tiempo para siguiente tabla"
             valor={formatMMSS(restante)}
             valorClase={colorRestante}
           />
