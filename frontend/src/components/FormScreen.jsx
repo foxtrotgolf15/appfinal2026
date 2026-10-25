@@ -331,7 +331,7 @@ const FormScreen = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="neumatico">Profundímetro neumático</SelectItem>
-                      <SelectItem value="ordenador">Ordenador / profundímetro del buzo</SelectItem>
+                      <SelectItem value="ordenador">Profundímetro digital</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
