@@ -29,9 +29,9 @@ const RealtimeFormScreen = () => {
   const pausedTimeRef = useRef(0);
   
   // Estado para todas las respuestas (restaurar si vienen de error)
-  const [p1, setP1] = useState(savedFormData?.p1 || '');
+  const [p1, setP1] = useState(savedFormData?.p1 || 'aire');
   const [p2, setP2] = useState(savedFormData?.p2 || '');
-  const [p2_1, setP2_1] = useState(savedFormData?.p2_1 || '');
+  const [p2_1, setP2_1] = useState(savedFormData?.p2_1 || 'ordenador');
   // P3 se calcula automáticamente del cronómetro
   const [p4, setP4] = useState(savedFormData?.p4 || '0');
   const [p4_1, setP4_1] = useState(savedFormData?.p4_1 || '');
@@ -41,7 +41,7 @@ const RealtimeFormScreen = () => {
   const [p5, setP5] = useState(savedFormData?.p5 || '');
   const [p5_1, setP5_1] = useState(savedFormData?.p5_1 || '');
   const [p5_2, setP5_2] = useState(savedFormData?.p5_2 || '');
-  const [p6, setP6] = useState(savedFormData?.p6 || '');
+  const [p6, setP6] = useState(savedFormData?.p6 || 'no');
   const [p6_1, setP6_1] = useState(savedFormData?.p6_1 || '');
   const [p6_2, setP6_2] = useState(savedFormData?.p6_2 || '');
   const [p6_3, setP6_3] = useState(savedFormData?.p6_3 || '');
