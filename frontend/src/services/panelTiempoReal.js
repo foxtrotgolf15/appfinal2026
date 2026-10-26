@@ -13,6 +13,11 @@ export const siguienteProfundidadTabla = (profundidadTabulada) => {
   return sig === undefined ? null : sig;
 };
 
+/** Tiempos de tabla (orden ascendente) de una profundidad tabulada. */
+export const tiemposDeProfundidad = (profundidadTabulada) =>
+  [...new Set(table1Data.filter((f) => f.profundidad === profundidadTabulada).map((f) => Number(f.tiempo)))]
+    .sort((a, b) => a - b);
+
 export const siguienteTiempoTabla = (profundidadTabulada, tiempoTabulado) => {
   let siguiente = null;
   for (const fila of table1Data) {
@@ -91,12 +96,29 @@ export const calcularPanelTiempoReal = (campos, minutos) => {
   }
   const actual = resumir(r);
 
-  // Siguiente tiempo de la tabla, misma profundidad
-  const tSig = siguienteTiempoTabla(r.profundidadTabulada, r.tiempoTabulado);
+  // Siguiente tiempo de la tabla, misma profundidad.
+  // - Si ya hay paradas: el siguiente tiempo de la tabla (cambian los tiempos de las paradas).
+  // - Si NO hay paradas: el primer tiempo de la tabla que ya tiene parada; la cuenta atrás va hasta
+  //   cumplir el último tiempo sin parada (justo antes de ese).
   let siguienteTiempo = null;
-  if (tSig !== null) {
-    const rt = calcular(p2, tSig);
-    if (resultadoValido(rt)) siguienteTiempo = resumir(rt);
+  const tiemposProf = tiemposDeProfundidad(r.profundidadTabulada);
+  const posiciones = tiemposProf.filter((t) => t > r.tiempoTabulado);
+  if (actual.paradas.length > 0) {
+    if (posiciones.length > 0) {
+      const rt = calcular(p2, posiciones[0]);
+      if (resultadoValido(rt)) siguienteTiempo = resumir(rt);
+    }
+  } else {
+    for (const t of posiciones) {
+      const rt = calcular(p2, t);
+      if (!resultadoValido(rt)) continue;
+      const res = resumir(rt);
+      if (res.paradas.length > 0) {
+        const previos = tiemposProf.filter((x) => x < t);
+        siguienteTiempo = { ...res, limiteSinParada: previos.length ? previos[previos.length - 1] : actual.tiempo };
+        break;
+      }
+    }
   }
 
   // Siguiente profundidad de la tabla, con el mismo tiempo transcurrido.
