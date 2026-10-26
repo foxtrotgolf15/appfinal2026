@@ -19,7 +19,7 @@ import { calculateDecompression } from '../services/decompressionCalculator';
 const ResultsScreen = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { resultados: resultadosIniciales, formData: formDataInicial } = location.state || {};
+  const { resultados: resultadosIniciales, formData: formDataInicial, abandonoFondoTs } = location.state || {};
 
   const [resultados, setResultados] = useState(resultadosIniciales);
   const [formData, setFormData] = useState(formDataInicial);
@@ -319,6 +319,7 @@ const ResultsScreen = () => {
                   <Timer 
                     duracion={resultados.tiempoHastaSuperficie} 
                     label="Tiempo de ascenso a superficie"
+ inicioTs={abandonoFondoTs}
                   />
                 </div>
               </div>
@@ -339,6 +340,7 @@ const ResultsScreen = () => {
                     <Timer 
                       duracion={resultados.tiempoHastaPrimeraParada} 
                       label="Tiempo hasta la primera parada"
+ inicioTs={abandonoFondoTs}
                     />
                   </div>
                 )}
@@ -475,6 +477,7 @@ const ResultsScreen = () => {
                   <Timer 
                     duracion={resultados.tiempoHastaPrimeraParada} 
                     label="Tiempo hasta la primera parada"
+ inicioTs={abandonoFondoTs}
                   />
                 </div>
 

@@ -91,7 +91,8 @@ const RealtimeFormScreen = () => {
       clearInterval(intervalRef.current);
       
       // Validar y calcular con el tiempo del cronómetro como P3
-      handleCalculate(elapsedTime);
+      // (se guarda el instante de "Abandonar fondo" para arrancar el ascenso solo)
+      handleCalculate(elapsedTime, Date.now());
     }
   };
 
@@ -258,7 +259,7 @@ const RealtimeFormScreen = () => {
     }
   }, [p5]);
 
-  const handleCalculate = (tiempoEnSegundos) => {
+  const handleCalculate = (tiempoEnSegundos, abandonoFondoTs) => {
     // Convertir segundos a formato mm:ss para P3
     const p3Value = formatTimeForP3(tiempoEnSegundos);
     
@@ -292,7 +293,7 @@ const RealtimeFormScreen = () => {
     }
     
     // Si todas las validaciones pasan, navegar a la pantalla de advertencias
-    navigate('/warning', { state: { formData: formDataToSend } });
+    navigate('/warning', { state: { formData: formDataToSend, abandonoFondoTs } });
   };
 
 

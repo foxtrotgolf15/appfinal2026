@@ -7,7 +7,7 @@ import { validateDiveType } from '../services/diveTypeValidator';
 const WarningContainer = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { formData } = location.state || {};
+  const { formData, abandonoFondoTs } = location.state || {};
 
   if (!formData) {
     navigate('/form');
@@ -38,7 +38,8 @@ const WarningContainer = () => {
     navigate('/results', {
       state: {
         resultados,
-        formData
+        formData,
+        abandonoFondoTs
       }
     });
   };
