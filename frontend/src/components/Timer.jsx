@@ -3,7 +3,7 @@ import { Button } from './ui/button';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from './ui/alert-dialog';
 import { Play, Pause, RotateCcw, Bell } from 'lucide-react';
 
-const Timer = ({ duracion, label }) => {
+const Timer = ({ duracion, label, inicioTs }) => {
   const [tiempoRestante, setTiempoRestante] = useState(null);
   const [estaActivo, setEstaActivo] = useState(false);
   const [notificacionEnviada, setNotificacionEnviada] = useState(false);
@@ -32,6 +32,19 @@ const Timer = ({ duracion, label }) => {
     setEstaActivo(false);
     setNotificacionEnviada(false);
   };
+
+  // Arranque automático: si llega la hora de inicio (pulsar "Abandonar fondo"),
+  // se descuentan los segundos ya transcurridos y el cronómetro empieza solo.
+  useEffect(() => {
+    if (!inicioTs) return;
+    const total = parsearDuracion(duracion);
+    const transcurridos = Math.max(0, Math.floor((Date.now() - inicioTs) / 1000));
+    const restante = Math.max(0, total - transcurridos);
+    setTiempoRestante(restante);
+    setNotificacionEnviada(false);
+    setEstaActivo(restante > 0);
+    // eslint-disable-next-line
+  }, []);
 
   // Solicitar permisos de notificación al montar el componente
   useEffect(() => {
