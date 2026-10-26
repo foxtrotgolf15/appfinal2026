@@ -86,7 +86,12 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
   }
 
   const { actual, siguienteTiempo, siguienteProfundidad } = panel;
-  const restante = Math.max(0, actual.tiempo * 60 - elapsedTime);
+  // Con paradas: hasta el siguiente cambio de tiempo tabulado. Sin paradas: hasta cumplir el último
+  // tiempo sin parada (justo antes del primer tiempo que ya tiene parada).
+  const limite = siguienteTiempo && siguienteTiempo.limiteSinParada !== undefined
+    ? siguienteTiempo.limiteSinParada
+    : actual.tiempo;
+  const restante = Math.max(0, limite * 60 - elapsedTime);
   const colorRestante = restante <= 30 ? 'text-red-600' : restante <= 120 ? 'text-amber-600' : 'text-green-700';
 
   return (
@@ -112,7 +117,7 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
             derecha={<ListaParadas esc={siguienteTiempo} />}
           />
         ) : (
-          <Vacio texto="No hay siguiente tiempo en tabla" />
+          <Vacio texto={actual.paradas.length === 0 ? "No hay tiempo con paradas en tabla" : "No hay siguiente tiempo en tabla"} />
         )}
       </Bloque>
 
