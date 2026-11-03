@@ -1,4 +1,5 @@
 import html2pdf from 'html2pdf.js';
+import { PROFUNDIDADES_PARADA, PROF_O2_PROFUNDA, PROF_O2_SOMERA } from './tablaConfig';
 
 // Función para convertir transliteración ASCII
 const transliterarASCII = (texto) => {
@@ -83,7 +84,7 @@ export const generateDiverLogPDF = async (cuestionarioData, resultados, formData
 
     // Preparar los datos de las paradas
     const paradasData = {};
-    const profundidadesParadas = [39.6, 36.6, 33.5, 30.5, 27.4, 24.4, 21.3, 18.3, 15.2, 12.2, 9.1, 6.1];
+    const profundidadesParadas = PROFUNDIDADES_PARADA;
     
     const esO2 = resultados.tipoCalculoEspecifico === 'SEA_LEVEL_O2' || resultados.tipoCalculoEspecifico === 'ALTITUDE_O2';
     const esAltitud = resultados.paradas && resultados.paradas.length > 0 && resultados.paradas[0].profundidadOriginal !== undefined;
@@ -190,7 +191,7 @@ export const generateDiverLogPDF = async (cuestionarioData, resultados, formData
       
       // Para nivel del mar, verificar exactamente 9.1m o 6.1m
       if (resultados.tipoCalculoEspecifico === 'SEA_LEVEL_O2') {
-        return primeraParada.profundidad === 9.1 || primeraParada.profundidad === 6.1;
+        return primeraParada.profundidad === PROF_O2_PROFUNDA || primeraParada.profundidad === PROF_O2_SOMERA;
       }
       
       // Para altitud, verificar si está cerca de los equivalentes de 9.1m o 6.1m

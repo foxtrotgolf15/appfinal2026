@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-globals */
-const CACHE = "deepy-v4";
+const CACHE = "deepy-v5";
 const PRECACHE_URLS = [
   "/",
   "/index.html",
