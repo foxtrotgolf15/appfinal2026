@@ -9,7 +9,6 @@ import { RadioGroup, RadioGroupItem } from './ui/radio-group';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './ui/tooltip';
 import { Info, AlertCircle, ArrowDownToLine, ArrowUpFromLine } from 'lucide-react';
 import { Alert, AlertDescription } from './ui/alert';
-import LegalFooter from './LegalFooter';
 import ScrollTimePicker from './ScrollTimePicker';
 import PanelTiempoReal from './PanelTiempoReal';
 import { calcularPanelTiempoReal } from '../services/panelTiempoReal';
@@ -318,7 +317,7 @@ const RealtimeFormScreen = () => {
 
   return (
     <div className="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen">
-      <div className="max-w-7xl mx-auto p-2 md:p-4 space-y-2 md:space-y-3 pb-16">
+      <div className="max-w-7xl mx-auto p-2 md:p-4 space-y-2 md:space-y-3 pb-4">
         <h1 className="rounded-lg bg-[#437c3f] py-2 md:py-4 text-center text-lg md:text-3xl font-bold text-white">
           Cálculo en Tiempo Real
         </h1>
@@ -642,7 +641,6 @@ const RealtimeFormScreen = () => {
             </CardContent>
           </Card>
         </form>
-        <LegalFooter />
       </div>
     </div>
   );
