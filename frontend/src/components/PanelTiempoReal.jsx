@@ -6,50 +6,52 @@ const formatMMSS = (segundos) => {
   return `${Math.floor(s / 60).toString().padStart(2, '0')}:${(s % 60).toString().padStart(2, '0')}`;
 };
 
-const Dato = ({ etiqueta, valor, valorClase = 'text-slate-900' }) => (
-  <div className="bg-white rounded-md border border-slate-200 px-2.5 py-1.5 md:px-3 md:py-2">
-    <div className="text-[10px] leading-tight md:text-xs text-slate-500">{etiqueta}</div>
-    <div className={`text-base md:text-2xl font-bold font-mono leading-tight ${valorClase}`}>{valor}</div>
+const Dato = ({ etiqueta, valor, valorClase = 'text-slate-900', destacado = false }) => (
+  <div className={`bg-white rounded-md border px-2.5 py-1.5 md:px-3 md:py-2 ${destacado ? 'border-blue-300' : 'border-slate-200'}`}>
+    <div className={`leading-tight ${destacado ? 'text-xs md:text-sm font-semibold text-slate-700' : 'text-[10px] md:text-xs text-slate-500'}`}>{etiqueta}</div>
+    <div className={`font-bold font-mono leading-tight ${destacado ? 'text-2xl md:text-4xl font-extrabold' : 'text-base md:text-2xl'} ${valorClase}`}>{valor}</div>
   </div>
 );
 
-const Fila = ({ etiqueta, valor, valorClase = 'text-slate-900' }) => (
-  <div className="flex items-center justify-between gap-2 bg-white rounded border border-slate-200 px-2 py-1 md:px-3 md:py-1.5">
-    <span className="text-[11px] md:text-sm text-slate-700">{etiqueta}</span>
-    <span className={`text-xs md:text-base font-bold font-mono ${valorClase}`}>{valor}</span>
+const Fila = ({ etiqueta, valor, valorClase = 'text-slate-900', destacado = false }) => (
+  <div className={`flex items-center justify-between gap-2 bg-white rounded border px-2 py-1 md:px-3 md:py-1.5 ${destacado ? 'border-blue-300' : 'border-slate-200'}`}>
+    <span className={`text-[11px] md:text-sm ${destacado ? 'font-semibold text-slate-900' : 'text-slate-700'}`}>{etiqueta}</span>
+    <span className={`font-mono ${destacado ? 'text-sm md:text-xl font-extrabold' : 'text-xs md:text-base font-bold'} ${valorClase}`}>{valor}</span>
   </div>
 );
 
 // Filas de paradas de un escenario: tiempo hasta 1ª parada + cada parada. Sin paradas: ascenso a superficie.
-const ListaParadas = ({ esc }) => {
+const ListaParadas = ({ esc, color = false, destacado = false }) => {
+  const vc = color ? 'text-amber-700' : 'text-slate-700';
   if (esc.paradas.length === 0) {
     return (
       <div className="flex flex-col gap-1">
-        <Fila etiqueta="Sin paradas" valor="—" />
-        {esc.superficie && <Fila etiqueta="Ascenso a superficie" valor={esc.superficie} valorClase="text-amber-700" />}
+        <Fila etiqueta="Sin paradas" valor="—" destacado={destacado} />
+        {esc.superficie && <Fila etiqueta="Ascenso a superficie" valor={esc.superficie} valorClase={vc} destacado={destacado} />}
       </div>
     );
   }
   return (
     <div className="flex flex-col gap-1">
       {esc.primeraParada && (
-        <Fila etiqueta="Tiempo hasta 1ª parada" valor={esc.primeraParada} valorClase="text-amber-700" />
+        <Fila etiqueta="Tiempo hasta 1ª parada" valor={esc.primeraParada} valorClase={vc} destacado={destacado} />
       )}
       {esc.paradas.map((p, i) => (
         <Fila
           key={i}
           etiqueta={`Parada a ${p.profundidad} m${p.o2 ? ' (O₂)' : ''}`}
           valor={formatMMSS(p.segundos)}
+          destacado={destacado}
         />
       ))}
     </div>
   );
 };
 
-const Bloque = ({ children, className = '', titulo }) => (
-  <Card className={`border-2 border-slate-200 bg-slate-50 ${className}`} data-testid="panel-tiempo-real">
+const Bloque = ({ children, className = '', titulo, destacado = false }) => (
+  <Card className={`${destacado ? 'border-4 border-blue-600 bg-blue-50 shadow-md' : 'border-2 border-slate-200 bg-slate-50'} ${className}`} data-testid="panel-tiempo-real">
     <CardContent className="p-2.5 md:p-4">
-      {titulo && <h2 className="text-xs font-bold tracking-wide text-slate-600 uppercase mb-2">{titulo}</h2>}
+      {titulo && <h2 className={`font-bold tracking-wide uppercase mb-2 ${destacado ? 'text-sm md:text-base text-blue-800' : 'text-xs text-slate-600'}`}>{titulo}</h2>}
       {children}
     </CardContent>
   </Card>
@@ -76,7 +78,7 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
     const msg = panel.estado === 'error' ? panel.mensaje : MENSAJES[panel.estado];
     return (
       <>
-        <Bloque titulo="Tabulación actual" className="md:col-span-2 md:row-start-1">
+        <Bloque destacado titulo="Tabulación actual" className="md:col-span-2 md:row-start-1">
           <Vacio texto={msg} />
         </Bloque>
         <Bloque titulo="Siguiente tabulación por tiempo" className="md:col-span-2"><Vacio texto="—" /></Bloque>
@@ -96,13 +98,13 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
 
   return (
     <>
-      <Bloque titulo="Tabulación actual" className="md:col-span-2 md:row-start-1">
+      <Bloque destacado titulo="Tabulación actual" className="md:col-span-2 md:row-start-1">
         <Dos
           izquierda={<>
-            <Dato etiqueta="Profundidad tabulada" valor={`${actual.profundidad} m`} />
-            <Dato etiqueta="Tiempo tabulado" valor={`${actual.tiempo} min`} />
+            <Dato destacado etiqueta="Profundidad tabulada" valor={`${actual.profundidad} m`} />
+            <Dato destacado etiqueta="Tiempo tabulado" valor={`${actual.tiempo} min`} />
           </>}
-          derecha={<ListaParadas esc={actual} />}
+          derecha={<ListaParadas esc={actual} color destacado />}
         />
       </Bloque>
 
@@ -110,9 +112,9 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
         {siguienteTiempo ? (
           <Dos
             izquierda={<>
-              <Dato etiqueta="Tiempo para siguiente tabla" valor={formatMMSS(restante)} valorClase={colorRestante} />
-              <Dato etiqueta="Profundidad" valor={`${siguienteTiempo.profundidad} m`} />
-              <Dato etiqueta="Tiempo" valor={`${siguienteTiempo.tiempo} min`} />
+              <Dato etiqueta="Tiempo para esta tabla" valor={formatMMSS(restante)} valorClase={colorRestante} />
+              <Dato etiqueta="Profundidad" valor={`${siguienteTiempo.profundidad} m`} valorClase="text-slate-700" />
+              <Dato etiqueta="Tiempo" valor={`${siguienteTiempo.tiempo} min`} valorClase="text-slate-700" />
             </>}
             derecha={<ListaParadas esc={siguienteTiempo} />}
           />
@@ -125,8 +127,8 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
         {siguienteProfundidad && !siguienteProfundidad.fueraDeTabla ? (
           <Dos
             izquierda={<>
-              <Dato etiqueta="Siguiente profundidad" valor={`${siguienteProfundidad.profundidad} m`} />
-              <Dato etiqueta="Tiempo" valor={`${siguienteProfundidad.tiempo} min`} />
+              <Dato etiqueta="Siguiente profundidad" valor={`${siguienteProfundidad.profundidad} m`} valorClase="text-slate-700" />
+              <Dato etiqueta="Tiempo" valor={`${siguienteProfundidad.tiempo} min`} valorClase="text-slate-700" />
             </>}
             derecha={<ListaParadas esc={siguienteProfundidad} />}
           />
