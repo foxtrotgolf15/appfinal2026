@@ -325,12 +325,12 @@ const RealtimeFormScreen = () => {
 
         {/* Cronómetro: fijo arriba al hacer scroll en el móvil */}
         <div className="sticky top-0 z-30 -mx-2 px-2 py-1 bg-slate-100 md:static md:mx-0 md:px-0 md:py-0 md:bg-transparent">
-          <Card className="bg-white border border-slate-200 shadow-sm">
-            <CardContent className="p-2 md:p-5">
+          <Card className="bg-gradient-to-br from-slate-900 to-slate-800 border-0 shadow-lg">
+            <CardContent className="p-2 md:p-6">
               <div className="flex items-center justify-between gap-2 md:grid md:grid-cols-[1fr_auto_1fr]">
                 <div className="md:col-start-2 md:text-center">
-                  <div className="text-xs md:text-lg text-slate-600">Tiempo de Inmersión</div>
-                  <div className="text-3xl md:text-7xl font-mono font-bold text-[#336b30] leading-tight">
+                  <div className="text-xs md:text-xl text-slate-300 tracking-wide">Tiempo de Inmersión</div>
+                  <div className="text-3xl md:text-8xl font-mono font-bold text-emerald-400 leading-tight">
                     {formatTime(elapsedTime)}
                   </div>
                 </div>
@@ -338,25 +338,25 @@ const RealtimeFormScreen = () => {
                   {!isRunning && (
                     <Button
                       onClick={startStopwatch}
-                      className="bg-blue-600 hover:bg-blue-700 text-white px-3 text-sm md:text-lg md:h-14 md:px-6"
+                      className="bg-blue-600 hover:bg-blue-500 text-white px-3 text-sm md:text-xl md:h-16 md:px-8"
                     >
-                      <ArrowDownToLine className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2" />
+                      <ArrowDownToLine className="w-4 h-4 md:w-6 md:h-6 mr-1.5 md:mr-2" />
                       Abandonar superficie
                     </Button>
                   )}
                   {isRunning && (
                     <Button
                       onClick={stopAndCalculate}
-                      className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold px-3 text-sm md:text-lg md:h-14 md:px-6"
+                      className="bg-yellow-400 hover:bg-yellow-300 text-slate-900 font-semibold px-3 text-sm md:text-xl md:h-16 md:px-8"
                     >
-                      <ArrowUpFromLine className="w-4 h-4 md:w-5 md:h-5 mr-1.5 md:mr-2" />
+                      <ArrowUpFromLine className="w-4 h-4 md:w-6 md:h-6 mr-1.5 md:mr-2" />
                       Abandonar fondo
                     </Button>
                   )}
                 </div>
               </div>
               {!isRunning && elapsedTime === 0 && (
-                <p className="hidden md:block text-sm text-slate-600 italic text-center mt-3">
+                <p className="hidden md:block text-sm text-slate-400 italic text-center mt-3">
                   Presiona "Abandonar superficie" para comenzar a registrar el tiempo de inmersión
                 </p>
               )}
@@ -400,9 +400,13 @@ const RealtimeFormScreen = () => {
           </Alert>
         )}
 
-        <form className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-3 items-start" onSubmit={(e) => e.preventDefault()}>
+        <form className="flex flex-col gap-2 md:gap-4" onSubmit={(e) => e.preventDefault()}>
+          {/* Tabulación actual, siguiente tiempo y siguiente profundidad */}
+          <PanelTiempoReal panel={panel} elapsedTime={elapsedTime} />
+
+          <div className="contents md:grid md:grid-cols-[1fr_2.2fr] md:gap-4 md:order-2 md:items-start">
           {/* Viñeta: profundidad máxima (+ tipo de profundímetro, de menor importancia) */}
-          <Card className="shadow-sm border-2 border-slate-200 md:row-start-1">
+          <Card className="order-1 shadow-sm border border-slate-200 bg-white">
             <CardContent className="p-3 md:p-4 space-y-3">
               <div className="space-y-2">
                 <Label htmlFor="p2">
@@ -448,12 +452,10 @@ const RealtimeFormScreen = () => {
             </CardContent>
           </Card>
 
-          {/* Tabulación actual, siguiente tiempo y siguiente profundidad */}
-          <PanelTiempoReal panel={panel} elapsedTime={elapsedTime} />
 
           {/* Viñeta: tipo de descompresión, altitud y resto de preguntas */}
-          <Card className="shadow-sm border-2 border-slate-200 md:col-start-3 md:row-start-2 md:row-span-2">
-            <CardContent className="p-3 md:p-4 space-y-5">
+          <Card className="order-3 shadow-sm border border-slate-200 bg-white">
+            <CardContent className="p-3 md:p-4 space-y-5 md:space-y-0 md:grid md:grid-cols-3 md:gap-4 md:items-start">
               {/* P1 */}
               <div className="space-y-2">
                 <Label htmlFor="p1">
@@ -487,7 +489,7 @@ const RealtimeFormScreen = () => {
 
               {/* P4.1 */}
               {showP4_1 && (
-                <div className="space-y-3 pl-4 border-l-4 border-green-300 bg-green-50 p-4 rounded">
+                <div className="md:col-span-3 space-y-3 pl-4 border-l-4 border-green-300 bg-green-50 p-4 rounded">
                   <div className="flex items-center space-x-2">
                     <Label>¿Se ha recalibrado el profundímetro al llegar a la altitud?</Label>
                     <TooltipProvider>
@@ -518,7 +520,7 @@ const RealtimeFormScreen = () => {
 
               {/* P4.2 */}
               {showP4_2 && (
-                <div className="space-y-3 pl-4 border-l-4 border-green-300 bg-green-50 p-4 rounded">
+                <div className="md:col-span-3 space-y-3 pl-4 border-l-4 border-green-300 bg-green-50 p-4 rounded">
                   <Label>¿Ha pasado el buzo más de 12h en la altitud indicada?</Label>
                   <RadioGroup value={p4_2} onValueChange={setP4_2}>
                     <div className="flex items-center space-x-2">
@@ -578,7 +580,7 @@ const RealtimeFormScreen = () => {
 
               {/* P5 */}
               {showP5 && (
-                <div className="space-y-3 pl-4 border-l-4 border-amber-300 bg-amber-50 p-4 rounded">
+                <div className="md:col-span-3 space-y-3 pl-4 border-l-4 border-amber-300 bg-amber-50 p-4 rounded">
                   <Label>¿La última inmersión superó los 6 metros de profundidad?</Label>
                   <RadioGroup value={p5} onValueChange={setP5}>
                     <div className="flex items-center space-x-2">
@@ -595,7 +597,7 @@ const RealtimeFormScreen = () => {
 
               {/* P6.1, P6.2, P6.3 */}
               {showP6Subcampos && (
-                <div className="space-y-4 pl-4 border-l-4 border-purple-300 bg-purple-50 p-4 rounded">
+                <div className="md:col-span-3 space-y-4 pl-4 border-l-4 border-purple-300 bg-purple-50 p-4 rounded">
                   <div className="space-y-2">
                     <Label htmlFor="p6_1">Profundidad máxima del buceo anterior (metros)</Label>
                     <Input
@@ -641,6 +643,7 @@ const RealtimeFormScreen = () => {
 
             </CardContent>
           </Card>
+          </div>
         </form>
       </div>
     </div>

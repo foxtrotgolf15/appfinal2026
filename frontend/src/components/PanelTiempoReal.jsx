@@ -6,10 +6,10 @@ const formatMMSS = (segundos) => {
   return `${Math.floor(s / 60).toString().padStart(2, '0')}:${(s % 60).toString().padStart(2, '0')}`;
 };
 
-const Dato = ({ etiqueta, valor, valorClase = 'text-slate-900', destacado = false }) => (
-  <div className={`bg-white rounded-md border px-2.5 py-1.5 md:px-3 md:py-2 ${destacado ? 'border-blue-300' : 'border-slate-200'}`}>
+const Dato = ({ etiqueta, valor, valorClase = 'text-slate-900', destacado = false, clase = '', grande = false }) => (
+  <div className={`bg-white rounded-lg border px-2.5 py-1.5 md:px-3 md:py-2 ${destacado ? 'border-blue-300' : 'border-slate-200'} ${clase}`}>
     <div className={`leading-tight ${destacado ? 'text-xs md:text-sm font-semibold text-slate-700' : 'text-[10px] md:text-xs text-slate-500'}`}>{etiqueta}</div>
-    <div className={`font-bold font-mono leading-tight ${destacado ? 'text-2xl md:text-4xl font-extrabold' : 'text-base md:text-2xl'} ${valorClase}`}>{valor}</div>
+    <div className={`font-bold font-mono leading-tight whitespace-nowrap ${destacado ? 'text-2xl md:text-3xl lg:text-4xl font-extrabold' : grande ? 'text-xl md:text-4xl lg:text-5xl font-extrabold' : 'text-base md:text-xl lg:text-2xl'} ${valorClase}`}>{valor}</div>
   </div>
 );
 
@@ -49,7 +49,7 @@ const ListaParadas = ({ esc, color = false, destacado = false }) => {
 };
 
 const Bloque = ({ children, className = '', titulo, destacado = false }) => (
-  <Card className={`${destacado ? 'border-4 border-blue-600 bg-blue-50 shadow-md' : 'border-2 border-slate-200 bg-slate-50'} ${className}`} data-testid="panel-tiempo-real">
+  <Card className={`${destacado ? 'border-4 border-blue-600 bg-gradient-to-b from-blue-50 to-blue-100 shadow-lg' : 'border border-slate-200 bg-slate-100/80 shadow-sm'} ${className}`} data-testid="panel-tiempo-real">
     <CardContent className="p-2.5 md:p-4">
       {titulo && <h2 className={`font-bold tracking-wide uppercase mb-2 ${destacado ? 'text-sm md:text-base text-blue-800' : 'text-xs text-slate-600'}`}>{titulo}</h2>}
       {children}
@@ -57,11 +57,17 @@ const Bloque = ({ children, className = '', titulo, destacado = false }) => (
   </Card>
 );
 
+// Móvil: cifras a la izquierda y paradas a la derecha. Tablet/ordenador: cifras arriba y paradas debajo.
 const Dos = ({ izquierda, derecha }) => (
-  <div className="grid grid-cols-[1fr_1.4fr] gap-2 md:gap-3 items-start">
-    <div className="flex flex-col gap-1.5 md:gap-2">{izquierda}</div>
+  <div className="grid grid-cols-[1fr_1.4fr] md:grid-cols-1 gap-2 md:gap-3 items-start">
+    <div className="flex flex-col md:grid md:grid-cols-2 gap-1.5 md:gap-2">{izquierda}</div>
     {derecha}
   </div>
+);
+
+// Tres tarjetas en fila en tablet/ordenador; apiladas en el móvil.
+const Fila3 = ({ children }) => (
+  <div className="order-2 md:order-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr] gap-2 md:gap-4 md:items-stretch">{children}</div>
 );
 
 const MENSAJES = {
@@ -77,13 +83,13 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
   if (panel.estado !== 'ok') {
     const msg = panel.estado === 'error' ? panel.mensaje : MENSAJES[panel.estado];
     return (
-      <>
-        <Bloque destacado titulo="Tabulación actual" className="md:col-span-2 md:row-start-1">
+      <Fila3>
+        <Bloque destacado titulo="Tabulación actual" className="md:col-span-2 lg:col-span-1">
           <Vacio texto={msg} />
         </Bloque>
-        <Bloque titulo="Siguiente tabulación por tiempo" className="md:col-span-2"><Vacio texto="—" /></Bloque>
-        <Bloque titulo="Siguiente tabulación por profundidad" className="md:col-span-2"><Vacio texto="—" /></Bloque>
-      </>
+        <Bloque titulo="Siguiente tabulación por tiempo"><Vacio texto="—" /></Bloque>
+        <Bloque titulo="Siguiente tabulación por profundidad"><Vacio texto="—" /></Bloque>
+      </Fila3>
     );
   }
 
@@ -97,8 +103,8 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
   const colorRestante = restante <= 30 ? 'text-red-600' : restante <= 120 ? 'text-amber-600' : 'text-green-700';
 
   return (
-    <>
-      <Bloque destacado titulo="Tabulación actual" className="md:col-span-2 md:row-start-1">
+    <Fila3>
+      <Bloque destacado titulo="Tabulación actual" className="md:col-span-2 lg:col-span-1">
         <Dos
           izquierda={<>
             <Dato destacado etiqueta="Profundidad tabulada" valor={`${actual.profundidad} m`} />
@@ -108,11 +114,11 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
         />
       </Bloque>
 
-      <Bloque titulo="Siguiente tabulación por tiempo" className="md:col-span-2">
+      <Bloque titulo="Siguiente tabulación por tiempo">
         {siguienteTiempo ? (
           <Dos
             izquierda={<>
-              <Dato etiqueta="Tiempo para esta tabla" valor={formatMMSS(restante)} valorClase={colorRestante} />
+              <Dato grande clase="md:col-span-2" etiqueta="Tiempo para esta tabla" valor={formatMMSS(restante)} valorClase={colorRestante} />
               <Dato etiqueta="Profundidad" valor={`${siguienteTiempo.profundidad} m`} valorClase="text-slate-700" />
               <Dato etiqueta="Tiempo" valor={`${siguienteTiempo.tiempo} min`} valorClase="text-slate-700" />
             </>}
@@ -123,7 +129,7 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
         )}
       </Bloque>
 
-      <Bloque titulo="Siguiente tabulación por profundidad" className="md:col-span-2">
+      <Bloque titulo="Siguiente tabulación por profundidad">
         {siguienteProfundidad && !siguienteProfundidad.fueraDeTabla ? (
           <Dos
             izquierda={<>
@@ -136,7 +142,7 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
           <Vacio texto={siguienteProfundidad ? `No hay en tabla (${siguienteProfundidad.profundidad} m con este tiempo)` : 'No hay siguiente profundidad en tabla'} />
         )}
       </Bloque>
-    </>
+    </Fila3>
   );
 };
 
