@@ -79,8 +79,8 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
         <Bloque titulo="Tabulación actual" className="md:col-span-2 md:row-start-1">
           <Vacio texto={msg} />
         </Bloque>
-        <Bloque className="md:col-span-2"><Vacio texto="—" /></Bloque>
-        <Bloque className="md:col-span-2"><Vacio texto="—" /></Bloque>
+        <Bloque titulo="Siguiente tabulación por tiempo" className="md:col-span-2"><Vacio texto="—" /></Bloque>
+        <Bloque titulo="Siguiente tabulación por profundidad" className="md:col-span-2"><Vacio texto="—" /></Bloque>
       </>
     );
   }
@@ -106,7 +106,7 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
         />
       </Bloque>
 
-      <Bloque className="md:col-span-2">
+      <Bloque titulo="Siguiente tabulación por tiempo" className="md:col-span-2">
         {siguienteTiempo ? (
           <Dos
             izquierda={<>
@@ -121,7 +121,7 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
         )}
       </Bloque>
 
-      <Bloque className="md:col-span-2">
+      <Bloque titulo="Siguiente tabulación por profundidad" className="md:col-span-2">
         {siguienteProfundidad && !siguienteProfundidad.fueraDeTabla ? (
           <Dos
             izquierda={<>
