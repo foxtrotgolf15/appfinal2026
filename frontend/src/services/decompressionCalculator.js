@@ -1,4 +1,5 @@
 import table1Data from '@/data/table_1.json';
+import { PROFUNDIDADES_PARADA, claveParada, PROF_O2_PROFUNDA, PROF_O2_SOMERA, PROFUNDIDAD_MAXIMA_TABLA } from './tablaConfig';
 import table4Data from '@/data/table_4.json';
 
 export const calculateDecompression = (formData) => {
@@ -73,7 +74,7 @@ const calculateSeaLevelO2Decompression = (formData) => {
   }
 
   // Regla 1 de Paso 2: Verificar si está fuera de tablas
-  if (profundidadMaximaCorregida > 91.4) {
+  if (profundidadMaximaCorregida > PROFUNDIDAD_MAXIMA_TABLA) {
     return {
       error: 'Inmersión fuera de tablas',
       errorType: 'OUT_OF_TABLES'
@@ -160,7 +161,7 @@ const calculateStandardDecompression = (formData) => {
   }
 
   // Regla 1 de Paso 2: Verificar si está fuera de tablas
-  if (profundidadMaximaCorregida > 91.4) {
+  if (profundidadMaximaCorregida > PROFUNDIDAD_MAXIMA_TABLA) {
     return {
       error: 'Inmersión fuera de tablas',
       errorType: 'OUT_OF_TABLES'
@@ -333,11 +334,11 @@ const getTipoInmersion = (modo) => {
 };
 
 const extraerParadas = (entrada) => {
-  const profundidades = [39.6, 36.6, 33.5, 30.5, 27.4, 24.4, 21.3, 18.3, 15.2, 12.2, 9.1, 6.1];
+  const profundidades = PROFUNDIDADES_PARADA;
   const paradas = [];
 
   profundidades.forEach(prof => {
-    const key = `parada a ${prof}m de profundidad`;
+    const key = claveParada(prof);
     const duracion = entrada[key];
     if (duracion !== null && duracion !== undefined && duracion > 0) {
       paradas.push({
@@ -650,7 +651,7 @@ const organizarParadasO2 = (paradas) => {
   // Organizar paradas: todas respirando aire excepto 9.1m y 6.1m que son con O2
   const paradasOrganizadas = paradas.map(parada => ({
     ...parada,
-    respirando: (parada.profundidad === 9.1 || parada.profundidad === 6.1) ? 'O2' : 'aire'
+    respirando: (parada.profundidad === PROF_O2_PROFUNDA || parada.profundidad === PROF_O2_SOMERA) ? 'O2' : 'aire'
   }));
 
   console.log('Paradas organizadas:', paradasOrganizadas);
@@ -727,7 +728,7 @@ const calcularBreaksO2 = (paradas) => {
         const parteActual = k + 1;
         const varias = tramos.length > 1;
         let descripcionParada;
-        if (parada.profundidad === 9.1 && hayParadasProfundas) {
+        if (parada.profundidad === PROF_O2_PROFUNDA && hayParadasProfundas) {
           descripcionParada = varias ? `Parada a ${parada.profundidad}m (Parte ${parteActual})` : `Parada a ${parada.profundidad}m`;
         } else if (parteActual === 1) {
           const base = i === 0 ? `Parada a ${parada.profundidad}m` : `Ascenso y parada a ${parada.profundidad}m`;
@@ -807,7 +808,7 @@ const calcularTiemposAscensoO2 = (resultado, profundidadMaximaCorregida) => {
   // igual que en la ruta de aire; sumarlo otra vez duplicaba ~20 s por tramo.
   // Única excepción (manual): el viaje hasta la primera parada de O2 sí se suma cuando vienen paradas de aire antes.
   let tiempoEntreParadas = 0;
-  const iPrimeraO2 = paradas.findIndex(p => p.profundidad <= 9.1);
+  const iPrimeraO2 = paradas.findIndex(p => p.profundidad <= PROF_O2_PROFUNDA);
   if (iPrimeraO2 > 0) {
     const distancia = paradas[iPrimeraO2 - 1].profundidad - paradas[iPrimeraO2].profundidad;
     tiempoEntreParadas = (distancia / velocidadAscenso) * 60;
@@ -834,9 +835,9 @@ const calcularConsumoO2 = (paradasO2) => {
 
   paradasO2.forEach(elemento => {
     if (elemento.respirando === 'O2') {
-      if (elemento.profundidad === 9.1) {
+      if (elemento.profundidad === PROF_O2_PROFUNDA) {
         tiempoTotal9_1m += elemento.duracion;
-      } else if (elemento.profundidad === 6.1) {
+      } else if (elemento.profundidad === PROF_O2_SOMERA) {
         tiempoTotal6_1m += elemento.duracion;
       }
     }
@@ -852,8 +853,8 @@ const calcularConsumoO2 = (paradasO2) => {
     litros: Math.round(consumoLitros * 100) / 100, // Redondear a 2 decimales
     botella200atm,
     tiempos: {
-      '9.1m': tiempoTotal9_1m,
-      '6.1m': tiempoTotal6_1m
+      [`${PROF_O2_PROFUNDA}m`]: tiempoTotal9_1m,
+      [`${PROF_O2_SOMERA}m`]: tiempoTotal6_1m
     }
   };
 };
@@ -994,7 +995,7 @@ const calculateAltitudeAirDecompression = (formData) => {
   }
 
   // Verificar si está fuera de tablas
-  if (profundidadMaximaCorregida > 91.4) {
+  if (profundidadMaximaCorregida > PROFUNDIDAD_MAXIMA_TABLA) {
     return {
       error: 'Inmersión fuera de tablas',
       errorType: 'OUT_OF_TABLES'
@@ -1005,7 +1006,7 @@ const calculateAltitudeAirDecompression = (formData) => {
   const { palt, profundidadEquivalente } = calcularProfundidadEquivalente(profundidadMaximaCorregida, altitud);
 
   // Verificar profundidad equivalente
-  if (profundidadEquivalente > 91.4) {
+  if (profundidadEquivalente > PROFUNDIDAD_MAXIMA_TABLA) {
     return {
       error: 'Inmersión fuera de tablas',
       errorType: 'OUT_OF_TABLES'
@@ -1088,7 +1089,7 @@ const calculateAltitudeO2Decompression = (formData) => {
     profundidadMaximaCorregida = profundidad + correccion;
   }
 
-  if (profundidadMaximaCorregida > 91.4) {
+  if (profundidadMaximaCorregida > PROFUNDIDAD_MAXIMA_TABLA) {
     return {
       error: 'Inmersión fuera de tablas',
       errorType: 'OUT_OF_TABLES'
@@ -1098,7 +1099,7 @@ const calculateAltitudeO2Decompression = (formData) => {
   // Paso 3: Calcular Palt y Profundidad Equivalente
   const { palt, profundidadEquivalente } = calcularProfundidadEquivalente(profundidadMaximaCorregida, altitud);
 
-  if (profundidadEquivalente > 91.4) {
+  if (profundidadEquivalente > PROFUNDIDAD_MAXIMA_TABLA) {
     return {
       error: 'Inmersión fuera de tablas',
       errorType: 'OUT_OF_TABLES'

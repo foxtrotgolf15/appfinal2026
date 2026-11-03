@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { PROF_O2_PROFUNDA, PROF_O2_SOMERA } from '../services/tablaConfig';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -115,7 +116,7 @@ const ResultsScreen = () => {
     }
     
     const primeraParada = resultados.paradas[0];
-    return primeraParada.profundidad === 9.1 || primeraParada.profundidad === 6.1;
+    return primeraParada.profundidad === PROF_O2_PROFUNDA || primeraParada.profundidad === PROF_O2_SOMERA;
   };
 
   // Función para calcular tiempo exacto incluyendo P7 (para PDF)

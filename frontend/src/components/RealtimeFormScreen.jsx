@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { PROFUNDIDAD_MAXIMA_TABLA } from '../services/tablaConfig';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
@@ -202,7 +203,7 @@ const RealtimeFormScreen = () => {
         }
       }
       
-      if (profundidadMaximaCorregida > 91.4) {
+      if (profundidadMaximaCorregida > PROFUNDIDAD_MAXIMA_TABLA) {
         newErrors.push('Inmersión fuera de tablas');
       }
     }

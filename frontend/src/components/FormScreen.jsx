@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { PROFUNDIDAD_MAXIMA_TABLA } from '../services/tablaConfig';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Button } from './ui/button';
@@ -116,7 +117,7 @@ const FormScreen = () => {
         }
       }
       
-      if (profundidadMaximaCorregida > 91.4) {
+      if (profundidadMaximaCorregida > PROFUNDIDAD_MAXIMA_TABLA) {
         newErrors.push('Inmersión fuera de tablas');
       }
     }
@@ -179,7 +180,7 @@ const FormScreen = () => {
     }
 
     // P2.1 es obligatorio si se muestra
-    const showP2_1 = p2 !== '' && parseFloat(p2) > 0 && parseFloat(p2) <= 91.4;
+    const showP2_1 = p2 !== '' && parseFloat(p2) > 0 && parseFloat(p2) <= PROFUNDIDAD_MAXIMA_TABLA;
     if (showP2_1 && !p2_1) {
       return false;
     }
@@ -231,7 +232,7 @@ const FormScreen = () => {
   };
 
   // Determinar si mostrar P2.1
-  const showP2_1 = p2 !== '' && parseFloat(p2) > 0 && parseFloat(p2) <= 91.4;
+  const showP2_1 = p2 !== '' && parseFloat(p2) > 0 && parseFloat(p2) <= PROFUNDIDAD_MAXIMA_TABLA;
 
   // Determinar si mostrar P4.1
   const showP4_1 = p2_1 === 'ordenador' && p4 !== '' && parseFloat(p4) >= 91.44;

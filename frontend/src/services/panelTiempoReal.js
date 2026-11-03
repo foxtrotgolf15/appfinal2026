@@ -1,5 +1,6 @@
 import table1Data from '@/data/table_1.json';
 import { calculateDecompression } from './decompressionCalculator';
+import { PROFUNDIDAD_MAXIMA_TABLA } from './tablaConfig';
 
 /**
  * Siguiente tiempo de la tabla (el inmediatamente superior) para una profundidad tabulada.
@@ -78,7 +79,7 @@ export const calcularPanelTiempoReal = (campos, minutos) => {
   const { p1, p2, p2_1, p4, p4_1, p4_2, p4_2_1, p4_2_2 } = campos;
   const profundidad = parseFloat(p2);
   if (!p2 || !(profundidad > 0)) return { estado: 'sin_profundidad' };
-  if (profundidad > 91.4) return { estado: 'error', mensaje: 'Inmersión fuera de tablas' };
+  if (profundidad > PROFUNDIDAD_MAXIMA_TABLA) return { estado: 'error', mensaje: 'Inmersión fuera de tablas' };
   if (!p2_1) return { estado: 'falta_instrumento' };
 
   const minutosTabulacion = Math.max(1, Math.ceil(minutos - 1e-9));
@@ -128,8 +129,8 @@ export const calcularPanelTiempoReal = (campos, minutos) => {
   const dSig = siguienteProfundidadTabla(r.profundidadTabulada);
   if (dSig !== null) {
     let lo = profundidad;
-    let hi = 91.4;
-    // Si a 91.4 m todavía tabula en dSig, ese es el límite
+    let hi = PROFUNDIDAD_MAXIMA_TABLA;
+    // Si a la profundidad máxima todavía tabula en dSig, ese es el límite
     if (calcular(hi, minutosTabulacion).profundidadTabulada <= dSig + 1e-9) lo = hi;
     else {
       for (let i = 0; i < 14 && hi - lo > 0.01; i++) {
