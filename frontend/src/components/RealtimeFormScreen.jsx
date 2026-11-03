@@ -400,96 +400,31 @@ const RealtimeFormScreen = () => {
           </Alert>
         )}
 
-        <form className="flex flex-col gap-2 md:gap-4" onSubmit={(e) => e.preventDefault()}>
-          {/* Tabulación actual, siguiente tiempo y siguiente profundidad */}
-          <PanelTiempoReal panel={panel} elapsedTime={elapsedTime} />
+        <form className="flex flex-col gap-2 md:gap-4 lg:grid lg:grid-cols-[1fr_1.7fr] lg:items-start" onSubmit={(e) => e.preventDefault()}>
+          {/* Columna izquierda (ordenador): tabulación actual + altitud e inmersión previa */}
+          <div className="contents lg:flex lg:flex-col lg:gap-4">
+            <PanelTiempoReal panel={panel} elapsedTime={elapsedTime} cual="actual" clases={{ actual: 'order-2' }} />
 
-          <div className="contents md:grid md:grid-cols-[1fr_2.2fr] md:gap-4 md:order-2 md:items-start">
-          {/* Viñeta: profundidad máxima (+ tipo de profundímetro, de menor importancia) */}
-          <Card className="order-1 shadow-sm border border-slate-200 bg-white">
-            <CardContent className="p-3 md:p-4 space-y-3">
-              <div className="space-y-2">
-                <Label htmlFor="p2">
-                  Profundidad máxima (metros) <span className="text-red-600">*</span>
-                </Label>
-                <Input
-                  id="p2"
-                  type="number"
-                  step="0.01"
-                  value={p2}
-                  onChange={(e) => setP2(e.target.value)}
-                  placeholder="Ej: 30.5"
-                  className="transition-all duration-200 focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-
-              <div className="space-y-1">
-                <div className="flex items-center gap-1">
-                  <Label className="text-xs font-normal text-slate-500 whitespace-nowrap">Tipo de profundímetro</Label>
-                  <TooltipProvider>
-                    <Tooltip delayDuration={0}>
-                      <TooltipTrigger asChild>
-                        <button type="button" className="inline-flex items-center p-1 touch-manipulation">
-                          <Info className="w-4 h-4 text-slate-400 cursor-help hover:text-slate-600 transition-colors" />
-                        </button>
-                      </TooltipTrigger>
-                      <TooltipContent className="max-w-xs bg-slate-900 text-white p-3 text-sm">
-                        <p>En caso de seleccionar la opción Profundímetro neumático se aplicará una corrección automáticamente que compense el peso del aire en la manguera</p>
-                      </TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
+            {/* Altitud e inmersión previa */}
+            <Card className="order-6 shadow-sm border border-slate-200 bg-white">
+              <CardContent className="p-3 md:p-4 space-y-5 lg:space-y-0 lg:grid lg:grid-cols-2 lg:gap-4 lg:items-start">
+                {/* P4 */}
+                <div className="space-y-2">
+                  <Label htmlFor="p4">Altitud del lugar de trabajo</Label>
+                  <Input
+                    id="p4"
+                    type="number"
+                    step="0.01"
+                    value={p4}
+                    onChange={(e) => setP4(e.target.value)}
+                    placeholder="metros"
+                    className="transition-all duration-200 focus:ring-2 focus:ring-green-500"
+                  />
                 </div>
-                <Select value={p2_1} onValueChange={setP2_1}>
-                  <SelectTrigger className="h-9 w-full md:w-56 text-sm text-slate-600 transition-all duration-200 focus:ring-2 focus:ring-green-500">
-                    <SelectValue placeholder="Seleccione" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="ordenador">Profundímetro digital</SelectItem>
-                    <SelectItem value="neumatico">Profundímetro neumático</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-            </CardContent>
-          </Card>
-
-
-          {/* Viñeta: tipo de descompresión, altitud y resto de preguntas */}
-          <Card className="order-3 shadow-sm border border-slate-200 bg-white">
-            <CardContent className="p-3 md:p-4 space-y-5 md:space-y-0 md:grid md:grid-cols-3 md:gap-4 md:items-start">
-              {/* P1 */}
-              <div className="space-y-2">
-                <Label htmlFor="p1">
-                  Tipo de descompresión <span className="text-red-600">*</span>
-                </Label>
-                <Select value={p1} onValueChange={setP1}>
-                  <SelectTrigger className="transition-all duration-200 focus:ring-2 focus:ring-green-500">
-                    <SelectValue placeholder="Seleccione una opción" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="aire">Aire</SelectItem>
-                    <SelectItem value="o2">O2 en el agua</SelectItem>
-                    <SelectItem value="camara" disabled>Cámara</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* P4 */}
-              <div className="space-y-2">
-                <Label htmlFor="p4">Altitud del lugar de trabajo</Label>
-                <Input
-                  id="p4"
-                  type="number"
-                  step="0.01"
-                  value={p4}
-                  onChange={(e) => setP4(e.target.value)}
-                  placeholder="metros"
-                  className="transition-all duration-200 focus:ring-2 focus:ring-green-500"
-                />
-              </div>
 
               {/* P4.1 */}
               {showP4_1 && (
-                <div className="md:col-span-3 space-y-3 pl-4 border-l-4 border-green-300 bg-green-50 p-4 rounded">
+                <div className="lg:col-span-2 space-y-3 pl-4 border-l-4 border-green-300 bg-green-50 p-4 rounded">
                   <div className="flex items-center space-x-2">
                     <Label>¿Se ha recalibrado el profundímetro al llegar a la altitud?</Label>
                     <TooltipProvider>
@@ -520,7 +455,7 @@ const RealtimeFormScreen = () => {
 
               {/* P4.2 */}
               {showP4_2 && (
-                <div className="md:col-span-3 space-y-3 pl-4 border-l-4 border-green-300 bg-green-50 p-4 rounded">
+                <div className="lg:col-span-2 space-y-3 pl-4 border-l-4 border-green-300 bg-green-50 p-4 rounded">
                   <Label>¿Ha pasado el buzo más de 12h en la altitud indicada?</Label>
                   <RadioGroup value={p4_2} onValueChange={setP4_2}>
                     <div className="flex items-center space-x-2">
@@ -580,7 +515,7 @@ const RealtimeFormScreen = () => {
 
               {/* P5 */}
               {showP5 && (
-                <div className="md:col-span-3 space-y-3 pl-4 border-l-4 border-amber-300 bg-amber-50 p-4 rounded">
+                <div className="lg:col-span-2 space-y-3 pl-4 border-l-4 border-amber-300 bg-amber-50 p-4 rounded">
                   <Label>¿La última inmersión superó los 6 metros de profundidad?</Label>
                   <RadioGroup value={p5} onValueChange={setP5}>
                     <div className="flex items-center space-x-2">
@@ -597,7 +532,7 @@ const RealtimeFormScreen = () => {
 
               {/* P6.1, P6.2, P6.3 */}
               {showP6Subcampos && (
-                <div className="md:col-span-3 space-y-4 pl-4 border-l-4 border-purple-300 bg-purple-50 p-4 rounded">
+                <div className="lg:col-span-2 space-y-4 pl-4 border-l-4 border-purple-300 bg-purple-50 p-4 rounded">
                   <div className="space-y-2">
                     <Label htmlFor="p6_1">Profundidad máxima del buceo anterior (metros)</Label>
                     <Input
@@ -641,8 +576,84 @@ const RealtimeFormScreen = () => {
                 </div>
               )}
 
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Columna derecha (ordenador): profundidad + tipo de descompresión, y debajo las dos siguientes tabulaciones */}
+          <div className="contents lg:flex lg:flex-col lg:gap-4">
+            <div className="contents lg:grid lg:grid-cols-[1.6fr_1fr] lg:gap-4 lg:items-stretch">
+              {/* Viñeta: profundidad máxima + tipo de profundímetro a la derecha */}
+              <Card className="order-1 shadow-sm border border-slate-200 bg-white">
+                <CardContent className="p-3 md:p-4 space-y-3 lg:space-y-0 lg:flex lg:items-end lg:gap-4">
+                  <div className="space-y-2 lg:flex-1">
+                    <Label htmlFor="p2">
+                      Profundidad máxima (metros) <span className="text-red-600">*</span>
+                    </Label>
+                    <Input
+                      id="p2"
+                      type="number"
+                      step="0.01"
+                      value={p2}
+                      onChange={(e) => setP2(e.target.value)}
+                      placeholder="Ej: 30.5"
+                      className="transition-all duration-200 focus:ring-2 focus:ring-green-500"
+                    />
+                  </div>
+
+                  <div className="space-y-1 lg:w-40">
+                    <div className="flex items-center gap-1">
+                      <Label className="text-xs font-normal text-slate-500 whitespace-nowrap">Tipo de profundímetro</Label>
+                      <TooltipProvider>
+                        <Tooltip delayDuration={0}>
+                          <TooltipTrigger asChild>
+                            <button type="button" className="inline-flex items-center p-1 touch-manipulation">
+                              <Info className="w-4 h-4 text-slate-400 cursor-help hover:text-slate-600 transition-colors" />
+                            </button>
+                          </TooltipTrigger>
+                          <TooltipContent className="max-w-xs bg-slate-900 text-white p-3 text-sm">
+                            <p>En caso de seleccionar la opción Profundímetro neumático se aplicará una corrección automáticamente que compense el peso del aire en la manguera</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </div>
+                    <Select value={p2_1} onValueChange={setP2_1}>
+                      <SelectTrigger className="h-10 w-full text-sm text-slate-700 transition-all duration-200 focus:ring-2 focus:ring-green-500">
+                        <SelectValue placeholder="Seleccione" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="ordenador">Digital</SelectItem>
+                        <SelectItem value="neumatico">Neumático</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Viñeta: tipo de descompresión */}
+              <Card className="order-5 shadow-sm border border-slate-200 bg-white">
+                <CardContent className="p-3 md:p-4 space-y-2">
+                  <Label htmlFor="p1">
+                    Tipo de descompresión <span className="text-red-600">*</span>
+                  </Label>
+                  <Select value={p1} onValueChange={setP1}>
+                    <SelectTrigger className="transition-all duration-200 focus:ring-2 focus:ring-green-500">
+                      <SelectValue placeholder="Seleccione una opción" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="aire">Aire</SelectItem>
+                      <SelectItem value="o2">O2 en el agua</SelectItem>
+                      <SelectItem value="camara" disabled>Cámara</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="contents md:order-3 md:grid md:grid-cols-2 md:gap-4 lg:order-none lg:items-stretch">
+              <PanelTiempoReal panel={panel} elapsedTime={elapsedTime} cual="tiempo" clases={{ tiempo: 'order-3' }} />
+              <PanelTiempoReal panel={panel} elapsedTime={elapsedTime} cual="profundidad" clases={{ profundidad: 'order-4' }} />
+            </div>
           </div>
         </form>
       </div>

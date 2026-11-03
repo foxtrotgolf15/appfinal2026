@@ -79,17 +79,16 @@ const Vacio = ({ texto }) => <p className="text-sm text-slate-500 text-center py
 
 // Devuelve tres tarjetas (tabulación actual, siguiente tiempo, siguiente profundidad)
 // para colocarlas directamente en la cuadrícula de la pantalla.
-const PanelTiempoReal = ({ panel, elapsedTime }) => {
+const PanelTiempoReal = ({ panel, elapsedTime, cual, clases = {} }) => {
+  const ver = (c) => !cual || cual === c;
   if (panel.estado !== 'ok') {
     const msg = panel.estado === 'error' ? panel.mensaje : MENSAJES[panel.estado];
     return (
-      <Fila3>
-        <Bloque destacado titulo="Tabulación actual" className="md:col-span-2 lg:col-span-1">
-          <Vacio texto={msg} />
-        </Bloque>
-        <Bloque titulo="Siguiente tabulación por tiempo"><Vacio texto="—" /></Bloque>
-        <Bloque titulo="Siguiente tabulación por profundidad"><Vacio texto="—" /></Bloque>
-      </Fila3>
+      <>
+        {ver('actual') && <Bloque destacado titulo="Tabulación actual" className={clases.actual}><Vacio texto={msg} /></Bloque>}
+        {ver('tiempo') && <Bloque titulo="Siguiente tabulación por tiempo" className={clases.tiempo}><Vacio texto="—" /></Bloque>}
+        {ver('profundidad') && <Bloque titulo="Siguiente tabulación por profundidad" className={clases.profundidad}><Vacio texto="—" /></Bloque>}
+      </>
     );
   }
 
@@ -103,8 +102,8 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
   const colorRestante = restante <= 30 ? 'text-red-600' : restante <= 120 ? 'text-amber-600' : 'text-green-700';
 
   return (
-    <Fila3>
-      <Bloque destacado titulo="Tabulación actual" className="md:col-span-2 lg:col-span-1">
+    <>
+      {ver('actual') && <Bloque destacado titulo="Tabulación actual" className={clases.actual}>
         <Dos
           izquierda={<>
             <Dato destacado etiqueta="Profundidad tabulada" valor={`${actual.profundidad} m`} />
@@ -112,9 +111,9 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
           </>}
           derecha={<ListaParadas esc={actual} color destacado />}
         />
-      </Bloque>
+      </Bloque>}
 
-      <Bloque titulo="Siguiente tabulación por tiempo">
+      {ver('tiempo') && <Bloque titulo="Siguiente tabulación por tiempo" className={clases.tiempo}>
         {siguienteTiempo ? (
           <Dos
             izquierda={<>
@@ -127,9 +126,9 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
         ) : (
           <Vacio texto={actual.paradas.length === 0 ? "No hay tiempo con paradas en tabla" : "No hay siguiente tiempo en tabla"} />
         )}
-      </Bloque>
+      </Bloque>}
 
-      <Bloque titulo="Siguiente tabulación por profundidad">
+      {ver('profundidad') && <Bloque titulo="Siguiente tabulación por profundidad" className={clases.profundidad}>
         {siguienteProfundidad && !siguienteProfundidad.fueraDeTabla ? (
           <Dos
             izquierda={<>
@@ -141,8 +140,8 @@ const PanelTiempoReal = ({ panel, elapsedTime }) => {
         ) : (
           <Vacio texto={siguienteProfundidad ? `No hay en tabla (${siguienteProfundidad.profundidad} m con este tiempo)` : 'No hay siguiente profundidad en tabla'} />
         )}
-      </Bloque>
-    </Fila3>
+      </Bloque>}
+    </>
   );
 };
 
